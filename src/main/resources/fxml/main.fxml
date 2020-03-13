@@ -1,0 +1,1887 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXDrawer?>
+<?import com.jfoenix.controls.JFXHamburger?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.SubScene?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.MotionBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox fx:id="hbox" alignment="TOP_CENTER" blendMode="HARD_LIGHT" cache="true" cacheHint="QUALITY" depthTest="ENABLE" fillHeight="false" style="-fx-background-color: transparent;" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tecsoluction.robo.controller.MainController">
+   <children>
+      <AnchorPane fx:id="anchor" blendMode="ADD" depthTest="DISABLE" focusTraversable="true" style="-fx-background-color: transparent; -fx-background-radius: 15px;" stylesheets="@../styles/Styles.css">
+         <children>
+            <JFXDrawer fx:id="drawer" alignment="CENTER_RIGHT" defaultDrawerSize="233.0" depthTest="DISABLE" direction="RIGHT" onDrawerClosed="#drawerespaco" resizableOnDrag="true" resizeContent="true" style="-fx-background-radius: 15px;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <VBox fx:id="vvb" alignment="CENTER" cache="true" cacheHint="QUALITY" fillWidth="false" focusTraversable="true" style="-fx-background-color: #55f2d7; -fx-background-radius: 10px;" stylesheets="@../styles/Styles.css">
+                     <children>
+                        <AnchorPane blendMode="MULTIPLY" cache="true" cacheHint="QUALITY" style="-fx-background-radius: 10px; -fx-background-color: transparent;">
+                           <children>
+                              <VBox id="dark-blue" alignment="CENTER" cache="true" cacheHint="QUALITY" focusTraversable="true" layoutX="5.0" layoutY="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="48.0">
+                                 <children>
+                                    <VBox fx:id="vbresult" alignment="CENTER" blendMode="HARD_LIGHT" depthTest="DISABLE" focusTraversable="true" spacing="2.0" stylesheets="@../styles/Styles.css">
+                                       <children>
+                                          <Separator depthTest="DISABLE" opacity="0.5" style="-fx-background-color: black;">
+                                             <VBox.margin>
+                                                <Insets bottom="2.0" top="2.0" />
+                                             </VBox.margin>
+                                          </Separator>
+                                          <HBox alignment="CENTER_LEFT" depthTest="DISABLE" focusTraversable="true" VBox.vgrow="SOMETIMES">
+                                             <children>
+                                                <ImageView depthTest="DISABLE" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" styleClass="imgdraw">
+                                                   <image>
+                                                      <Image url="@../images/icons8-open-envelope-64.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets right="13.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <Label alignment="CENTER" blendMode="SOFT_LIGHT" text="ENVIADOS:" textFill="#212222">
+                                                   <font>
+                                                      <Font name="SimSun" size="18.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets right="5.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Pane minWidth="10.0" HBox.hgrow="SOMETIMES" />
+                                                <Label fx:id="lbltotalenviado" blendMode="ADD" text="0" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="SimSun" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Pane HBox.hgrow="ALWAYS" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" depthTest="DISABLE" focusTraversable="true" VBox.vgrow="SOMETIMES">
+                                             <children>
+                                                <ImageView depthTest="DISABLE" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" styleClass="imgdraw">
+                                                   <image>
+                                                      <Image url="@../images/icons8-send-email-50.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets right="13.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <Label alignment="CENTER" blendMode="SOFT_LIGHT" text="VÁLIDOS :" textFill="#212222">
+                                                   <font>
+                                                      <Font name="SimSun" size="18.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets right="5.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Pane minWidth="10.0" HBox.hgrow="SOMETIMES" />
+                                                <Label fx:id="lbltotal" blendMode="ADD" text="0" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="SimSun" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                                <Pane HBox.hgrow="ALWAYS" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" depthTest="DISABLE" focusTraversable="true" VBox.vgrow="SOMETIMES">
+                                             <children>
+                                                <ImageView depthTest="DISABLE" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" styleClass="imgdraw">
+                                                   <image>
+                                                      <Image url="@../images/icons8-encaminhar-mensagem-96.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets right="13.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <Label alignment="CENTER" blendMode="SOFT_LIGHT" text="REENVIO :" textFill="#212222">
+                                                   <font>
+                                                      <Font name="SimSun" size="18.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets right="5.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Pane depthTest="DISABLE" minWidth="11.0" HBox.hgrow="SOMETIMES" />
+                                                <Label fx:id="lbltotalenv" blendMode="ADD" text="0" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="SimSun" size="18.0" />
+                                                   </font>
+                                                   <tooltip>
+                                                      <Tooltip fx:id="toltipreenviados" text="Detentos Reenviados" />
+                                                   </tooltip>
+                                                </Label>
+                                                <Pane depthTest="DISABLE" focusTraversable="true" HBox.hgrow="ALWAYS" />
+                                                <JFXButton fx:id="btregerar" alignment="CENTER" cache="true" cacheHint="QUALITY" contentDisplay="RIGHT" ellipsisString="" graphicTextGap="5.0" lineSpacing="5.0" onAction="#regerar" pickOnBounds="false" ripplerFill="#f5fc36" style="-fx-border-color: white;" text="NEW" textAlignment="CENTER" textFill="#70fadee8" wrapText="true">
+                                                   <graphic>
+                                                      <ImageView depthTest="DISABLE" fitHeight="12.0" fitWidth="12.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/icons8-ms-excel-100%20(2).png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                   <tooltip>
+                                                      <Tooltip text="Gerar Arquivo Excel">
+                                                         <font>
+                                                            <Font name="SimSun" size="16.0" />
+                                                         </font>
+                                                      </Tooltip>
+                                                   </tooltip>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </JFXButton>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="1.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" depthTest="DISABLE" focusTraversable="true" VBox.vgrow="SOMETIMES">
+                                             <children>
+                                                <ImageView depthTest="DISABLE" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" styleClass="imgdraw">
+                                                   <image>
+                                                      <Image url="@../images/icons8-checkmark-48.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets right="13.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <Label alignment="CENTER" blendMode="SOFT_LIGHT" text="SUCESSO :" textFill="#212222">
+                                                   <font>
+                                                      <Font name="SimSun" size="18.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets right="5.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Pane blendMode="ADD" depthTest="DISABLE" minWidth="10.0" HBox.hgrow="SOMETIMES" />
+                                                <Label fx:id="lblsucesso" alignment="CENTER" blendMode="ADD" text="0" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="SimSun" size="18.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Pane depthTest="DISABLE" focusTraversable="true" HBox.hgrow="ALWAYS" />
+                                                <JFXButton fx:id="btopensucesso" alignment="CENTER" buttonType="RAISED" cache="true" cacheHint="QUALITY" contentDisplay="RIGHT" graphicTextGap="5.0" lineSpacing="5.0" onAction="#opensucesso" pickOnBounds="false" ripplerFill="#f5fc36" style="-fx-border-color: white;" text="VER" textAlignment="CENTER" textFill="#70fade" wrapText="true">
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                   <graphic>
+                                                      <ImageView depthTest="DISABLE" fitHeight="15.0" fitWidth="15.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/icons8-tabela-100.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                   <tooltip>
+                                                      <Tooltip text="Abrir Tabela Sucesso">
+                                                         <font>
+                                                            <Font name="SimSun" size="16.0" />
+                                                         </font>
+                                                      </Tooltip>
+                                                   </tooltip>
+                                                </JFXButton>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="1.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" depthTest="DISABLE" focusTraversable="true" VBox.vgrow="SOMETIMES">
+                                             <children>
+                                                <ImageView depthTest="DISABLE" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" styleClass="imgdraw">
+                                                   <image>
+                                                      <Image url="@../images/icons8-important-mail-48.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets right="13.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <Label alignment="CENTER" blendMode="SOFT_LIGHT" text="PENDENTE:" textFill="#212222">
+                                                   <font>
+                                                      <Font name="SimSun" size="18.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets right="5.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Pane depthTest="DISABLE" minWidth="10.0" HBox.hgrow="SOMETIMES" />
+                                                <Label fx:id="lblpendente" text="0" textFill="WHITE">
+                                                   <font>
+                                                      <Font name="SimSun" size="18.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Pane depthTest="DISABLE" focusTraversable="true" HBox.hgrow="ALWAYS" />
+                                                <JFXButton fx:id="btopenpendente" alignment="CENTER" buttonType="RAISED" cache="true" cacheHint="QUALITY" contentDisplay="RIGHT" graphicTextGap="5.0" lineSpacing="5.0" onAction="#openpendente" pickOnBounds="false" ripplerFill="#f5fc36" style="-fx-border-color: white;" text="VER" textAlignment="CENTER" textFill="#70fade" wrapText="true">
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                   <graphic>
+                                                      <ImageView depthTest="DISABLE" fitHeight="15.0" fitWidth="15.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/icons8-tabela-100%20(2).png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                   <tooltip>
+                                                      <Tooltip text="Abrir Tabela Pendente">
+                                                         <font>
+                                                            <Font name="SimSun" size="16.0" />
+                                                         </font>
+                                                      </Tooltip>
+                                                   </tooltip>
+                                                </JFXButton>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets bottom="1.0" />
+                                             </VBox.margin>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT" depthTest="DISABLE" focusTraversable="true" VBox.vgrow="SOMETIMES">
+                                             <children>
+                                                <ImageView depthTest="DISABLE" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" styleClass="imgdraw">
+                                                   <image>
+                                                      <Image url="@../images/error.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets right="13.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <Label alignment="CENTER" text=" ERROS  :" textFill="#212222">
+                                                   <font>
+                                                      <Font name="SimSun" size="18.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets right="5.0" />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Pane depthTest="DISABLE" minWidth="10.0" HBox.hgrow="SOMETIMES" />
+                                                <Label fx:id="lblerro" alignment="TOP_LEFT" depthTest="DISABLE" text="0" textFill="#fffffffc">
+                                                   <font>
+                                                      <Font name="SimSun" size="18.0" />
+                                                   </font>
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                </Label>
+                                                <Pane depthTest="DISABLE" focusTraversable="true" HBox.hgrow="ALWAYS" />
+                                                <JFXButton fx:id="btopenerro" alignment="CENTER" buttonType="RAISED" cache="true" cacheHint="QUALITY" contentDisplay="RIGHT" graphicTextGap="5.0" lineSpacing="5.0" onAction="#openerro" pickOnBounds="false" ripplerFill="#f5fc36" style="-fx-border-color: white;" text="VER" textAlignment="CENTER" textFill="#70fade" wrapText="true">
+                                                   <HBox.margin>
+                                                      <Insets />
+                                                   </HBox.margin>
+                                                   <graphic>
+                                                      <ImageView depthTest="DISABLE" fitHeight="15.0" fitWidth="15.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/icons8-tabela-100%20(1).png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                   <tooltip>
+                                                      <Tooltip text="Abrir Tabela Erros">
+                                                         <font>
+                                                            <Font name="SimSun" size="16.0" />
+                                                         </font>
+                                                      </Tooltip>
+                                                   </tooltip>
+                                                </JFXButton>
+                                             </children>
+                                          </HBox>
+                                          <Separator blendMode="HARD_LIGHT" opacity="0.79" style="-fx-background-color: black;">
+                                             <VBox.margin>
+                                                <Insets bottom="5.0" top="5.0" />
+                                             </VBox.margin></Separator>
+                                       </children>
+                                    </VBox>
+                                    <AnchorPane fx:id="anchoresiult" blendMode="HARD_LIGHT" depthTest="DISABLE" stylesheets="@../styles/Styles.css" VBox.vgrow="NEVER">
+                                       <children>
+                                          <VBox fx:id="vbresultreg" alignment="CENTER" blendMode="HARD_LIGHT" depthTest="DISABLE" focusTraversable="true" spacing="2.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" focusTraversable="true" VBox.vgrow="SOMETIMES">
+                                                   <children>
+                                                      <ImageView cacheHint="QUALITY" fitHeight="24.0" fitWidth="24.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true" styleClass="imgdraw">
+                                                         <image>
+                                                            <Image url="@../images/icons8-72-0-74070-home-ícones-populares-96.png" />
+                                                         </image>
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" right="10.0" />
+                                                         </HBox.margin>
+                                                      </ImageView>
+                                                      <Label blendMode="SOFT_LIGHT" text="TOTAL REG. NO ARQUIVO" textFill="#212222" HBox.hgrow="SOMETIMES">
+                                                         <font>
+                                                            <Font name="SimSun" size="18.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Pane HBox.hgrow="ALWAYS" />
+                                                      <Label fx:id="lbltotreg" blendMode="ADD" text="0" textFill="WHITE" wrapText="true">
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                         <font>
+                                                            <Font name="SimSun" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" focusTraversable="true">
+                                                   <children>
+                                                      <ImageView cacheHint="QUALITY" fitHeight="24.0" fitWidth="24.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true" styleClass="imgdraw">
+                                                         <image>
+                                                            <Image url="@../images/icons8-72-0-74070-home-ícones-populares-96.png" />
+                                                         </image>
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" right="10.0" />
+                                                         </HBox.margin>
+                                                      </ImageView>
+                                                      <Label blendMode="SOFT_LIGHT" text="TOTAL REG. VALIDOS" textFill="#212222" HBox.hgrow="SOMETIMES">
+                                                         <font>
+                                                            <Font name="SimSun" size="18.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Pane HBox.hgrow="ALWAYS" />
+                                                      <Label fx:id="lbltotreg1" blendMode="ADD" text="0" textFill="WHITE" wrapText="true">
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                         <font>
+                                                            <Font name="SimSun" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" VBox.vgrow="SOMETIMES">
+                                                   <children>
+                                                      <ImageView fitHeight="24.0" fitWidth="24.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true" styleClass="imgdraw">
+                                                         <image>
+                                                            <Image url="@../images/icons8-analyze-96.png" />
+                                                         </image>
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" right="10.0" />
+                                                         </HBox.margin>
+                                                      </ImageView>
+                                                      <Label blendMode="SOFT_LIGHT" text="REG.FILTRADOS &lt;cody&gt;" textFill="#212222" HBox.hgrow="SOMETIMES">
+                                                         <font>
+                                                            <Font name="SimSun" size="18.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Pane HBox.hgrow="ALWAYS" />
+                                                      <Label fx:id="lbltotregfil" blendMode="ADD" text="0" textFill="WHITE" wrapText="true">
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                         <font>
+                                                            <Font name="SimSun" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" VBox.vgrow="SOMETIMES">
+                                                   <children>
+                                                      <ImageView fitHeight="24.0" fitWidth="24.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true" styleClass="imgdraw">
+                                                         <image>
+                                                            <Image url="@../images/icons8-target-48.png" />
+                                                         </image>
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" right="10.0" />
+                                                         </HBox.margin>
+                                                      </ImageView>
+                                                      <Label fx:id="lblfilternome2" blendMode="SOFT_LIGHT" text="REMOVIDOS POR FILTRO" textFill="#212222">
+                                                         <font>
+                                                            <Font name="SimSun" size="18.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" />
+                                                         </HBox.margin>
+                                                         <tooltip>
+                                                            <Tooltip fx:id="jtooltipfiltro2" text="Filtros nome" />
+                                                         </tooltip>
+                                                      </Label>
+                                                      <Pane HBox.hgrow="ALWAYS" />
+                                                      <Label fx:id="lblfiltrosaplicados2" blendMode="ADD" text="0" textFill="WHITE" wrapText="true" HBox.hgrow="NEVER">
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                         <font>
+                                                            <Font name="SimSun" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets />
+                                                   </VBox.margin>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" VBox.vgrow="SOMETIMES">
+                                                   <children>
+                                                      <ImageView fitHeight="24.0" fitWidth="24.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true" styleClass="imgdraw">
+                                                         <image>
+                                                            <Image url="@../images/icons8-name-48.png" />
+                                                         </image>
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" right="10.0" />
+                                                         </HBox.margin>
+                                                      </ImageView>
+                                                      <Label blendMode="SOFT_LIGHT" text="REGISTROS UNIFICADOS" textFill="#212222" HBox.hgrow="SOMETIMES">
+                                                         <font>
+                                                            <Font name="SimSun" size="18.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Pane HBox.hgrow="ALWAYS" />
+                                                      <Label fx:id="lbltotregfiltrado" blendMode="ADD" text="0" textFill="WHITE" wrapText="true">
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                         <font>
+                                                            <Font name="SimSun" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" VBox.vgrow="SOMETIMES">
+                                                   <children>
+                                                      <ImageView fitHeight="24.0" fitWidth="24.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true" styleClass="imgdraw">
+                                                         <image>
+                                                            <Image url="@../images/icons8-administrator-male-30.png" />
+                                                         </image>
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" right="10.0" />
+                                                         </HBox.margin>
+                                                      </ImageView>
+                                                      <Label blendMode="SOFT_LIGHT" text="REGISTROS VALIDOS" textFill="#212222" HBox.hgrow="SOMETIMES">
+                                                         <font>
+                                                            <Font name="SimSun" size="18.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Pane HBox.hgrow="ALWAYS" />
+                                                      <Label fx:id="lbldetentoremovidos" blendMode="ADD" text="0" textFill="WHITE" wrapText="true" HBox.hgrow="ALWAYS">
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                         <font>
+                                                            <Font name="SimSun" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" VBox.vgrow="SOMETIMES">
+                                                   <children>
+                                                      <ImageView fitHeight="24.0" fitWidth="24.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true" styleClass="imgdraw">
+                                                         <image>
+                                                            <Image url="@../images/icons8-administrator-male-30.png" />
+                                                         </image>
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" right="10.0" />
+                                                         </HBox.margin>
+                                                      </ImageView>
+                                                      <Label blendMode="SOFT_LIGHT" text="DETENTOS VÁLIDOS" textFill="#212222" HBox.hgrow="SOMETIMES">
+                                                         <font>
+                                                            <Font name="SimSun" size="18.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Pane HBox.hgrow="ALWAYS" />
+                                                      <Label fx:id="lblviolaremovida" blendMode="ADD" text="0" textFill="WHITE" wrapText="true">
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                         <font>
+                                                            <Font name="SimSun" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" VBox.vgrow="SOMETIMES">
+                                                   <children>
+                                                      <ImageView fitHeight="24.0" fitWidth="24.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true" styleClass="imgdraw" HBox.hgrow="SOMETIMES">
+                                                         <image>
+                                                            <Image url="@../images/icons8-limpar-filtros-48.png" />
+                                                         </image>
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" right="10.0" />
+                                                         </HBox.margin>
+                                                      </ImageView>
+                                                      <Label fx:id="lblfilternome" blendMode="SOFT_LIGHT" text="FILTROS APLICADOS" textFill="#212222">
+                                                         <font>
+                                                            <Font name="SimSun" size="18.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" />
+                                                         </HBox.margin>
+                                                         <tooltip>
+                                                            <Tooltip fx:id="jtooltipfiltro" text="Empty Tooltip" />
+                                                         </tooltip>
+                                                      </Label>
+                                                      <Pane HBox.hgrow="ALWAYS" />
+                                                      <Label fx:id="lblfiltrosaplicados" blendMode="ADD" text="0" textFill="WHITE" wrapText="true" HBox.hgrow="SOMETIMES">
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                         <font>
+                                                            <Font name="SimSun" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" VBox.vgrow="SOMETIMES">
+                                                   <children>
+                                                      <ImageView fitHeight="24.0" fitWidth="24.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true" styleClass="imgdraw">
+                                                         <image>
+                                                            <Image url="@../images/icons8-flag-filled-24.png" />
+                                                         </image>
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" right="10.0" />
+                                                         </HBox.margin>
+                                                      </ImageView>
+                                                      <Label fx:id="lbviolavazia" blendMode="SOFT_LIGHT" text="NOTIF.SUBST. S/ NOTIF" textFill="#212222">
+                                                         <font>
+                                                            <Font name="SimSun" size="18.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" />
+                                                         </HBox.margin>
+                                                         <tooltip>
+                                                            <Tooltip fx:id="jtoltipviolavazia" text="Empty Tooltip" />
+                                                         </tooltip>
+                                                      </Label>
+                                                      <Pane HBox.hgrow="ALWAYS" />
+                                                      <Label fx:id="lbltotviolavazia" blendMode="ADD" text="0" textFill="WHITE" wrapText="true">
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                         <font>
+                                                            <Font name="SimSun" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" VBox.vgrow="SOMETIMES">
+                                                   <children>
+                                                      <ImageView fitHeight="24.0" fitWidth="24.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true" styleClass="imgdraw">
+                                                         <image>
+                                                            <Image url="@../images/icons8-flag-filled-24.png" />
+                                                         </image>
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" right="10.0" />
+                                                         </HBox.margin>
+                                                      </ImageView>
+                                                      <Label fx:id="lbnotsubst" blendMode="SOFT_LIGHT" text="NOTIFICACAO SUBSTITUTA" textFill="#212222">
+                                                         <font>
+                                                            <Font name="SimSun" size="18.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" />
+                                                         </HBox.margin>
+                                                         <tooltip>
+                                                            <Tooltip fx:id="jtopsubstituta" text="substitutas" />
+                                                         </tooltip>
+                                                      </Label>
+                                                      <Pane HBox.hgrow="ALWAYS" />
+                                                      <Label fx:id="lbltotnotsubs" blendMode="ADD" text="0" textFill="WHITE" wrapText="true">
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                         <font>
+                                                            <Font name="SimSun" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" VBox.vgrow="SOMETIMES">
+                                                   <children>
+                                                      <ImageView fitHeight="24.0" fitWidth="24.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true" styleClass="imgdraw">
+                                                         <image>
+                                                            <Image url="@../images/icons8-flag-filled-24.png" />
+                                                         </image>
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" right="10.0" />
+                                                         </HBox.margin>
+                                                      </ImageView>
+                                                      <Label fx:id="lbnoticancela" blendMode="SOFT_LIGHT" text="NOTIFICACAO CANCELA" textFill="#202221">
+                                                         <font>
+                                                            <Font name="SimSun" size="18.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" />
+                                                         </HBox.margin>
+                                                         <tooltip>
+                                                            <Tooltip fx:id="jtoltipcancela" text="Empty Tooltip" />
+                                                         </tooltip>
+                                                      </Label>
+                                                      <Pane HBox.hgrow="ALWAYS" />
+                                                      <Label fx:id="lbltotnotcancela" blendMode="ADD" text="0" textFill="WHITE" wrapText="true">
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" right="5.0" />
+                                                         </HBox.margin>
+                                                         <font>
+                                                            <Font name="SimSun" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                    <Separator opacity="0.77" style="-fx-background-color: black;">
+                                       <VBox.margin>
+                                          <Insets bottom="5.0" />
+                                       </VBox.margin></Separator>
+                                    <AnchorPane fx:id="anchorinfo" blendMode="HARD_LIGHT" depthTest="DISABLE" style="-fx-background-color: transparent;" VBox.vgrow="NEVER">
+                                       <children>
+                                          <VBox alignment="CENTER" blendMode="HARD_LIGHT" depthTest="DISABLE" layoutX="5.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <children>
+                                                <HBox alignment="CENTER_LEFT" fillHeight="false" spacing="5.0" VBox.vgrow="NEVER">
+                                                   <children>
+                                                      <ImageView fitHeight="24.0" fitWidth="24.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true" styleClass="imgdraw">
+                                                         <image>
+                                                            <Image url="@../images/icons8-microsoft-excel-2019-48.png" />
+                                                         </image>
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" right="10.0" />
+                                                         </HBox.margin>
+                                                      </ImageView>
+                                                      <Label fx:id="lblarquivo" blendMode="ADD" text="ARQUIVO" textFill="#212222" wrapText="true" HBox.hgrow="NEVER">
+                                                         <tooltip>
+                                                            <Tooltip fx:id="jtooltiparquivo" text="Arquivo Excel Configurado" />
+                                                         </tooltip>
+                                                         <font>
+                                                            <Font name="SimSun" size="18.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" fillHeight="false" spacing="5.0" VBox.vgrow="NEVER">
+                                                   <children>
+                                                      <ImageView fitHeight="24.0" fitWidth="24.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true" styleClass="imgdraw">
+                                                         <image>
+                                                            <Image url="@../images/icons8-ms-word-100.png" />
+                                                         </image>
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" right="10.0" />
+                                                         </HBox.margin>
+                                                      </ImageView>
+                                                      <Label fx:id="lblmodelo" blendMode="ADD" text="MODELO" textFill="#212222" wrapText="true">
+                                                         <tooltip>
+                                                            <Tooltip text="Nome do Modelo do Oficio Configurado" />
+                                                         </tooltip>
+                                                         <font>
+                                                            <Font name="SimSun" size="18.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets left="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" fillHeight="false" spacing="5.0" VBox.vgrow="NEVER">
+                                                   <children>
+                                                      <ImageView fitHeight="24.0" fitWidth="24.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true" styleClass="imgdraw">
+                                                         <image>
+                                                            <Image url="@../images/icons8-save-close-96.png" />
+                                                         </image>
+                                                         <HBox.margin>
+                                                            <Insets bottom="5.0" right="10.0" />
+                                                         </HBox.margin>
+                                                      </ImageView>
+                                                      <Label fx:id="lbldiretorio" blendMode="ADD" text="DIRETORIO" textFill="#212222" wrapText="true" HBox.hgrow="ALWAYS">
+                                                         <tooltip>
+                                                            <Tooltip fx:id="jtooltipdiretorio" text="Diretorio Principal da Aplicação" />
+                                                         </tooltip>
+                                                         <font>
+                                                            <Font name="SimSun" size="18.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="5.0" />
+                                             </padding>
+                                          </VBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </VBox>
+                              <Separator opacity="0.8" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <padding>
+                                    <Insets bottom="5.0" left="8.0" right="8.0" />
+                                 </padding>
+                              </Separator>
+                              <HBox alignment="CENTER_LEFT" layoutX="6.5" spacing="25.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                                 <children>
+                                    <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/fdd.png" />
+                                       </image>
+                                       <HBox.margin>
+                                          <Insets left="5.0" right="30.0" />
+                                       </HBox.margin>
+                                    </ImageView>
+                                    <Text cacheHint="QUALITY" depthTest="ENABLE" fill="#929493" focusTraversable="true" stroke="#2abc7f" strokeDashOffset="10.0" strokeLineJoin="ROUND" strokeMiterLimit="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="F.O.D.A" textAlignment="JUSTIFY">
+                                       <font>
+                                          <Font name="Impossible" size="35.0" />
+                                       </font>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Text>
+                                 </children>
+                              </HBox>
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </AnchorPane>
+                     </children>
+                     <effect>
+                        <DropShadow height="9.14" radius="2.585" width="3.2" />
+                     </effect>
+                  </VBox>
+               </children>
+               <rotationAxis>
+                  <Point3D />
+               </rotationAxis>
+               <effect>
+                  <DropShadow height="9.14" radius="4.8100000000000005" spread="0.04" width="12.1" />
+               </effect>
+            </JFXDrawer>
+         </children>
+         <HBox.margin>
+            <Insets left="4.0" top="-10.0" />
+         </HBox.margin>
+         <effect>
+            <InnerShadow />
+         </effect>
+      </AnchorPane>
+      <VBox fx:id="vbox" alignment="CENTER_RIGHT" depthTest="DISABLE" style="-fx-background-color: #55f2d7;" stylesheets="@../styles/Styles.css" HBox.hgrow="NEVER">
+         <children>
+            <VBox blendMode="HARD_LIGHT" cache="true" cacheHint="QUALITY" depthTest="DISABLE" focusTraversable="true" VBox.vgrow="ALWAYS">
+               <children>
+                  <AnchorPane id="dark-bluee" blendMode="HARD_LIGHT" depthTest="DISABLE">
+                     <children>
+                        <VBox alignment="CENTER" layoutX="10.0" layoutY="-1.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <VBox>
+                                 <children>
+                                    <HBox blendMode="OVERLAY" focusTraversable="true" VBox.vgrow="SOMETIMES">
+                                       <children>
+                                          <ImageView blendMode="DIFFERENCE" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                                             <image>
+                                                <Image url="@../images/fd.png" />
+                                             </image>
+                                             <HBox.margin>
+                                                <Insets bottom="2.0" left="2.0" top="2.0" />
+                                             </HBox.margin>
+                                          </ImageView>
+                                          <Pane HBox.hgrow="SOMETIMES" />
+                                          <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
+                                             <children>
+                                                <JFXButton fx:id="btminimizar" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" onAction="#minimizar" styleClass="lbverde2">
+                                                   <graphic>
+                                                      <ImageView blendMode="DIFFERENCE" depthTest="DISABLE" fitHeight="26.0" fitWidth="26.0" focusTraversable="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/minimize.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                   <tooltip>
+                                                      <Tooltip autoHide="true" text="Minimizar Janela">
+                                                         <font>
+                                                            <Font name="SimSun" size="15.0" />
+                                                         </font>
+                                                      </Tooltip>
+                                                   </tooltip>
+                                                </JFXButton>
+                                                <JFXButton fx:id="btmaximinizar" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" onAction="#maximinizar" styleClass="lbverde2">
+                                                   <graphic>
+                                                      <ImageView blendMode="DIFFERENCE" depthTest="DISABLE" fitHeight="30.0" fitWidth="30.0" focusTraversable="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/maximize.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                   <tooltip>
+                                                      <Tooltip autoHide="true" text="Maximizar Janela">
+                                                         <font>
+                                                            <Font name="SimSun" size="15.0" />
+                                                         </font>
+                                                      </Tooltip>
+                                                   </tooltip>
+                                                </JFXButton>
+                                                <JFXButton fx:id="btfechar" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" onAction="#tray" styleClass="lbverde2">
+                                                   <graphic>
+                                                      <ImageView blendMode="DIFFERENCE" depthTest="DISABLE" fitHeight="26.0" fitWidth="26.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/minimize%20(2).png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                   <tooltip>
+                                                      <Tooltip autoHide="true" text="Barra de Tarefas">
+                                                         <font>
+                                                            <Font name="SimSun" size="15.0" />
+                                                         </font>
+                                                      </Tooltip>
+                                                   </tooltip>
+                                                </JFXButton>
+                                             </children>
+                                             <padding>
+                                                <Insets bottom="-4.0" />
+                                             </padding>
+                                          </HBox>
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
+                        </VBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </AnchorPane>
+                  <HBox alignment="CENTER_RIGHT" blendMode="DARKEN" depthTest="DISABLE" focusTraversable="true">
+                     <children>
+                        <JFXHamburger fx:id="hamburger" alignment="CENTER_LEFT" depthTest="DISABLE" focusTraversable="true" HBox.hgrow="SOMETIMES">
+                           <HBox.margin>
+                              <Insets bottom="3.0" left="20.0" right="5.0" top="3.0" />
+                           </HBox.margin>
+                           <effect>
+                              <InnerShadow />
+                           </effect>
+                        </JFXHamburger>
+                        <Pane depthTest="DISABLE" focusTraversable="true">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                           <children>
+                              <JFXButton fx:id="btapagar" contentDisplay="GRAPHIC_ONLY" onAction="#apagar">
+                                 <graphic>
+                                    <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/icons8-apagador-48.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip text="Apagar" />
+                                 </tooltip>
+                              </JFXButton>
+                           </children>
+                           <effect>
+                              <InnerShadow />
+                           </effect></Pane>
+                        <JFXHamburger fx:id="hamburgerhelp" alignment="CENTER_RIGHT" depthTest="DISABLE" focusTraversable="true" HBox.hgrow="SOMETIMES">
+                           <HBox.margin>
+                              <Insets bottom="3.0" left="5.0" right="20.0" top="3.0" />
+                           </HBox.margin>
+                           <effect>
+                              <InnerShadow />
+                           </effect>
+                        </JFXHamburger>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                     </padding>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </VBox>
+            <AnchorPane fx:id="anchor" blendMode="MULTIPLY" cache="true" cacheHint="QUALITY" onMouseDragged="#mousedrag" onMousePressed="#mousepress">
+               <children>
+                  <AnchorPane id="dark-bluee" cacheHint="QUALITY" depthTest="DISABLE" focusTraversable="true" layoutX="1.0" layoutY="235.0" AnchorPane.bottomAnchor="68.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="172.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" layoutY="-16.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <SubScene fx:id="subcena" blendMode="HARD_LIGHT" cacheHint="SCALE" depthTest="DISABLE" fill="#70eeffe1" focusTraversable="true" height="20.0" opacity="0.54" pickOnBounds="true" width="20.0">
+                                 <root>
+                                    <Region />
+                                 </root>
+                                 <effect>
+                                    <InnerShadow choke="0.21" color="#55c0d0" height="71.78" radius="33.815" width="65.48">
+                                       <input>
+                                          <MotionBlur angle="257.15" radius="27.25" />
+                                       </input>
+                                    </InnerShadow>
+                                 </effect>
+                                 <VBox.margin>
+                                    <Insets top="15.0" />
+                                 </VBox.margin>
+                              </SubScene>
+                              <HBox alignment="CENTER_RIGHT" cacheHint="SPEED" depthTest="DISABLE" fillHeight="false" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" visible="false" VBox.vgrow="NEVER">
+                                 <children>
+                                    <Pane depthTest="DISABLE" maxWidth="20.0" minWidth="0.0" HBox.hgrow="SOMETIMES" />
+                                    <Label depthTest="DISABLE" style="-fx-font-size: 28;" styleClass="lbverde" text="Exibir Validação" textAlignment="CENTER" textFill="#f2f0f0" />
+                                    <Pane depthTest="DISABLE" HBox.hgrow="SOMETIMES" />
+                                    <JFXToggleButton fx:id="jtgexibirvalidacao" alignment="CENTER_RIGHT" contentDisplay="GRAPHIC_ONLY" depthTest="DISABLE" disable="true" graphicTextGap="0.0" size="11.0" stylesheets="@../styles/Styles.css" textFill="#f5eded" toggleColor="#4df0e5dd" toggleLineColor="#7df5e9da" unToggleColor="#678899" unToggleLineColor="#2e2929ef">
+                                       <tooltip>
+                                          <Tooltip autoHide="true" styleClass="lblbranca" text="Abre Painel de Validação">
+                                             <font>
+                                                <Font name="SimSun" size="14.0" />
+                                             </font>
+                                          </Tooltip>
+                                       </tooltip>
+                                    </JFXToggleButton>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" cacheHint="SPEED" depthTest="DISABLE" disable="true" fillHeight="false" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" stylesheets="@../styles/Styles.css" visible="false" VBox.vgrow="NEVER">
+                                 <children>
+                                    <Label blendMode="HARD_LIGHT" style="-fx-font-size: 28;" text="*" textFill="#443e46">
+                                       <HBox.margin>
+                                          <Insets left="3.0" top="10.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <ProgressIndicator fx:id="progressindligar" maxHeight="30.0" prefHeight="30.0" styleClass="progressind" visible="false" HBox.hgrow="NEVER" />
+                                    <Label fx:id="lblligar" depthTest="DISABLE" style="-fx-font-size: 28;" styleClass="lbverde" text="Localizar Arquivo" textFill="WHITE" wrapText="true">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Pane blendMode="ADD" depthTest="DISABLE" HBox.hgrow="SOMETIMES">
+                                       <children>
+                                          <Label fx:id="lblretornoligar" alignment="CENTER" blendMode="COLOR_DODGE" contentDisplay="CENTER" depthTest="DISABLE" graphicTextGap="0.0" layoutX="44.0" text="Sucesso" textFill="#62f5f2" textOverrun="CLIP" visible="false" wrapText="true" />
+                                       </children></Pane>
+                                    <JFXToggleButton fx:id="jtgbligar" alignment="CENTER_RIGHT" contentDisplay="GRAPHIC_ONLY" depthTest="DISABLE" graphicTextGap="0.0" size="11.0" stylesheets="@../styles/Styles.css" textFill="#f5eded" toggleColor="#4df0e5dd" toggleLineColor="#7df5e9da" unToggleColor="#678899e8" unToggleLineColor="#2e2929ef" wrapText="true">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <tooltip>
+                                          <Tooltip autoHide="true" styleClass="lblbranca" text="Localiza o Arquivo Excel">
+                                             <font>
+                                                <Font name="SimSun" size="14.0" />
+                                             </font>
+                                          </Tooltip>
+                                       </tooltip>
+                                    </JFXToggleButton>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" cacheHint="SPEED" depthTest="DISABLE" fillHeight="false">
+                                 <children>
+                                    <Label blendMode="HARD_LIGHT" style="-fx-font-size: 28;" text=" " textFill="#443e46">
+                                       <HBox.margin>
+                                          <Insets left="3.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <ProgressIndicator fx:id="progressindanalisar" maxHeight="30.0" prefHeight="30.0" styleClass="progressind" visible="false" />
+                                    <Label fx:id="lblanalisar" depthTest="DISABLE" style="-fx-font-size: 28;" styleClass="lbverde" text="Analisar Arquivo" textAlignment="CENTER" textFill="#f2f0f0" />
+                                    <Pane depthTest="DISABLE">
+                                       <children>
+                                          <JFXButton fx:id="btcarregarArquivoAnalise" contentDisplay="GRAPHIC_ONLY" onAction="#openanaalise">
+                                             <graphic>
+                                                <ImageView blendMode="ADD" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/icons8-cursor-da-mão-48.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                             <tooltip>
+                                                <Tooltip text="Escolher Excel para Analise" />
+                                             </tooltip>
+                                          </JFXButton>
+                                       </children>
+                                    </Pane>
+                                    <Pane depthTest="DISABLE" HBox.hgrow="SOMETIMES">
+                                       <children>
+                                          <Label fx:id="lblnomearquivoanalise" style="-fx-font-size: 10px;" text="." visible="false" />
+                                       </children>
+                                    </Pane>
+                                    <JFXToggleButton fx:id="jtgbanalisararquivo" alignment="CENTER_RIGHT" contentDisplay="GRAPHIC_ONLY" depthTest="DISABLE" disable="true" graphicTextGap="0.0" size="11.0" stylesheets="@../styles/Styles.css" textFill="#f5eded" toggleColor="#4df0e5dd" toggleLineColor="#7df5e9da" unToggleColor="#678899" unToggleLineColor="#2e2929ef">
+                                       <tooltip>
+                                          <Tooltip autoHide="true" styleClass="lblbranca" text="Abre Painel de Validação">
+                                             <font>
+                                                <Font name="SimSun" size="14.0" />
+                                             </font>
+                                          </Tooltip>
+                                       </tooltip>
+                                    </JFXToggleButton>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_RIGHT" cacheHint="SPEED" depthTest="DISABLE" fillHeight="false" stylesheets="@../styles/Styles.css">
+                                 <children>
+                                    <Label blendMode="HARD_LIGHT" style="-fx-font-size: 28;" text=" " textFill="#443e46">
+                                       <HBox.margin>
+                                          <Insets left="3.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <ProgressIndicator fx:id="progressindfiltro" maxHeight="30.0" prefHeight="30.0" styleClass="progressind" visible="false" HBox.hgrow="NEVER" />
+                                    <Label fx:id="lblfiltrosistema" depthTest="DISABLE" style="-fx-font-size: 28;" styleClass="lbverde" text="Usar Filtro Sistema" textFill="WHITE" wrapText="true">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Pane blendMode="ADD" depthTest="DISABLE" HBox.hgrow="SOMETIMES">
+                                       <children>
+                                          <Label fx:id="lblretornoligar1" alignment="CENTER" blendMode="COLOR_DODGE" contentDisplay="CENTER" depthTest="DISABLE" graphicTextGap="0.0" layoutX="44.0" text="Sucesso" textFill="#62f5f2" textOverrun="CLIP" visible="false" wrapText="true" />
+                                       </children>
+                                    </Pane>
+                                    <JFXToggleButton fx:id="jtgbfiltrosistema" alignment="CENTER_RIGHT" contentDisplay="GRAPHIC_ONLY" depthTest="DISABLE" graphicTextGap="0.0" size="11.0" stylesheets="@../styles/Styles.css" textFill="#f5eded" toggleColor="#4df0e5dd" toggleLineColor="#7df5e9da" unToggleColor="#678899e8" unToggleLineColor="#2e2929ef" wrapText="true">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <tooltip>
+                                          <Tooltip autoHide="true" styleClass="lblbranca" text="Localiza o Arquivo Excel">
+                                             <font>
+                                                <Font name="SimSun" size="14.0" />
+                                             </font>
+                                          </Tooltip>
+                                       </tooltip>
+                                    </JFXToggleButton>
+                                 </children>
+                              </HBox>
+                              <VBox cacheHint="QUALITY" depthTest="DISABLE" VBox.vgrow="NEVER">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" cacheHint="SPEED" depthTest="DISABLE" fillHeight="false" stylesheets="@../styles/Styles.css" VBox.vgrow="NEVER">
+                                       <children>
+                                          <Label blendMode="HARD_LIGHT" style="-fx-font-size: 28;" text="*" textFill="#453e3d" visible="false">
+                                             <HBox.margin>
+                                                <Insets left="3.0" top="10.0" />
+                                             </HBox.margin>
+                                          </Label>
+                                          <ProgressIndicator fx:id="progressindtarefa" maxHeight="30.0" prefHeight="30.0" styleClass="progressind" visible="false" HBox.hgrow="NEVER" />
+                                          <Label fx:id="lblcriar" depthTest="DISABLE" style="-fx-font-size: 28;" styleClass="lbverde" text="Enviar Email Lote" textFill="WHITE" wrapText="true">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Pane depthTest="DISABLE" HBox.hgrow="SOMETIMES">
+                                             <children>
+                                                <Label fx:id="lblretornotarefa" alignment="TOP_CENTER" blendMode="COLOR_DODGE" contentDisplay="CENTER" depthTest="DISABLE" graphicTextGap="0.0" layoutX="44.0" text="Sucesso" textFill="#62f5f2" visible="false" wrapText="true" />
+                                             </children>
+                                          </Pane>
+                                          <JFXToggleButton fx:id="jtgbcriartarefa" contentDisplay="GRAPHIC_ONLY" depthTest="DISABLE" graphicTextGap="0.0" size="11.0" textFill="#f5eded" toggleColor="#4bf2f2" toggleLineColor="#72f7e3df" unToggleColor="#4a6f86c9" unToggleLineColor="#171717" wrapText="true">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                             <tooltip>
+                                                <Tooltip autoHide="true" text="Envia o Email em Lote">
+                                                   <font>
+                                                      <Font name="SimSun" size="14.0" />
+                                                   </font>
+                                                </Tooltip>
+                                             </tooltip>
+                                          </JFXToggleButton>
+                                       </children>
+                                    </HBox>
+                                    <AnchorPane blendMode="DIFFERENCE" depthTest="DISABLE" disable="true" maxHeight="35.0" maxWidth="250.0" prefHeight="35.0" prefWidth="220.0" VBox.vgrow="NEVER">
+                                       <VBox.margin>
+                                          <Insets left="10.0" top="-10.0" />
+                                       </VBox.margin>
+                                       <children>
+                                          <ToolBar fx:id="toolbar" cacheHint="SPEED" depthTest="DISABLE" disable="true" focusTraversable="false" layoutX="2.0" layoutY="2.0" prefWidth="200.0" style="-fx-background-color: transparent;" stylesheets="@../styles/Styles.css" AnchorPane.leftAnchor="45.0" AnchorPane.topAnchor="0.0">
+                                             <items>
+                                                <JFXButton fx:id="btstop" cacheHint="QUALITY" contentDisplay="GRAPHIC_ONLY" depthTest="DISABLE" disable="true" graphicTextGap="0.0" maxHeight="22.0" maxWidth="22.0" onAction="#stop" prefHeight="22.0" prefWidth="22.0" styleClass="big-button">
+                                                   <graphic>
+                                                      <ImageView depthTest="DISABLE" fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/icons8-stop-64%20(1).png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                   <tooltip>
+                                                      <Tooltip text="Parar Execução" />
+                                                   </tooltip>
+                                                </JFXButton>
+                                                <JFXButton fx:id="btplay" cacheHint="QUALITY" contentDisplay="GRAPHIC_ONLY" depthTest="DISABLE" disable="true" maxHeight="22.0" maxWidth="22.0" onAction="#play" prefHeight="22.0" prefWidth="22.0" styleClass="big-button">
+                                                   <graphic>
+                                                      <ImageView depthTest="DISABLE" disable="true" fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/icons8-play-64%20(1).png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                   <tooltip>
+                                                      <Tooltip text="Iniciar Execução" />
+                                                   </tooltip>
+                                                </JFXButton>
+                                                <JFXButton fx:id="btpause" cacheHint="QUALITY" contentDisplay="GRAPHIC_ONLY" depthTest="DISABLE" disable="true" maxHeight="22.0" maxWidth="22.0" onAction="#pause" prefHeight="22.0" prefWidth="22.0" styleClass="big-button">
+                                                   <graphic>
+                                                      <ImageView depthTest="DISABLE" fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/icons8-pause-64%20(1).png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                   <tooltip>
+                                                      <Tooltip text="Pausar Execução" />
+                                                   </tooltip>
+                                                </JFXButton>
+                                                <JFXButton fx:id="btrefresh" cacheHint="QUALITY" contentDisplay="GRAPHIC_ONLY" depthTest="DISABLE" disable="true" maxHeight="22.0" maxWidth="22.0" onAction="#refresh" prefHeight="22.0" prefWidth="22.0" styleClass="big-button">
+                                                   <graphic>
+                                                      <ImageView depthTest="DISABLE" fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/icons8-restart-48.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </graphic>
+                                                   <tooltip>
+                                                      <Tooltip text="Resetar Execução" />
+                                                   </tooltip>
+                                                </JFXButton>
+                                             </items>
+                                             <effect>
+                                                <DropShadow color="#080808e9" />
+                                             </effect>
+                                          </ToolBar>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </VBox>
+                              <VBox depthTest="DISABLE" disable="true" maxHeight="30.0" minWidth="30.0" prefHeight="30.0" visible="false" VBox.vgrow="NEVER">
+                                 <children>
+                                    <HBox alignment="CENTER_LEFT" depthTest="DISABLE" disable="true" fillHeight="false" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" stylesheets="@../styles/Styles.css" visible="false" VBox.vgrow="NEVER">
+                                       <children>
+                                          <ProgressIndicator fx:id="progressindteste" maxHeight="30.0" prefHeight="30.0" styleClass="progressind" visible="false" HBox.hgrow="NEVER" />
+                                          <Label fx:id="lblteste" blendMode="OVERLAY" styleClass="lbbranca" text="Envio Automático" textAlignment="CENTER" textFill="#a7e8da" wrapText="true">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                          </Label>
+                                          <Pane HBox.hgrow="ALWAYS">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                             <children>
+                                                <Label fx:id="lblretornoautomatico" alignment="TOP_CENTER" blendMode="COLOR_DODGE" contentDisplay="CENTER" depthTest="DISABLE" graphicTextGap="0.0" layoutX="61.0" text="Sucesso" textFill="#62f5f2" visible="false" wrapText="true" />
+                                             </children>
+                                          </Pane>
+                                          <JFXToggleButton fx:id="jtgbteste" contentDisplay="GRAPHIC_ONLY" depthTest="DISABLE" disable="true" graphicTextGap="0.0" size="11.0" textFill="#f5eded" toggleColor="#7ff5f5" toggleLineColor="#8ef5e4f3" unToggleColor="#375a6ecd" unToggleLineColor="#1d1d1e" visible="false" wrapText="true">
+                                             <HBox.margin>
+                                                <Insets />
+                                             </HBox.margin>
+                                             <tooltip>
+                                                <Tooltip autoHide="true" text="Repete Execução Automaticamente">
+                                                   <font>
+                                                      <Font name="SimSun" size="14.0" />
+                                                   </font>
+                                                </Tooltip>
+                                             </tooltip>
+                                          </JFXToggleButton>
+                                       </children>
+                                    </HBox>
+                                    <ToolBar fx:id="toolbarauto" blendMode="DIFFERENCE" depthTest="DISABLE" disable="true" maxWidth="180.0" style="-fx-background-color: transparent;" stylesheets="@../styles/Styles.css" visible="false" VBox.vgrow="NEVER">
+                                       <items>
+                                          <JFXButton fx:id="btstopauto" blendMode="DIFFERENCE" cache="true" contentDisplay="GRAPHIC_ONLY" depthTest="DISABLE" graphicTextGap="0.0" maxHeight="22.0" maxWidth="22.0" onAction="#stopauto" prefHeight="22.0" prefWidth="22.0">
+                                             <graphic>
+                                                <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/icons8-stop-64%20(1).png" />
+                                                   </image>
+                                                   <effect>
+                                                      <InnerShadow color="#f8f5f5" />
+                                                   </effect>
+                                                </ImageView>
+                                             </graphic>
+                                             <tooltip>
+                                                <Tooltip text="Parar Execução" />
+                                             </tooltip>
+                                          </JFXButton>
+                                          <JFXButton fx:id="btplayauto" blendMode="DIFFERENCE" cache="true" contentDisplay="GRAPHIC_ONLY" depthTest="DISABLE" maxHeight="22.0" maxWidth="22.0" onAction="#playauto" prefHeight="22.0" prefWidth="22.0">
+                                             <graphic>
+                                                <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/icons8-play-64%20(1).png" />
+                                                   </image>
+                                                   <effect>
+                                                      <InnerShadow color="#f8f5f5" />
+                                                   </effect>
+                                                </ImageView>
+                                             </graphic>
+                                             <tooltip>
+                                                <Tooltip text="Iniciar Execução" />
+                                             </tooltip>
+                                          </JFXButton>
+                                          <JFXButton fx:id="btpauseauto" blendMode="DIFFERENCE" cache="true" contentDisplay="GRAPHIC_ONLY" depthTest="DISABLE" maxHeight="22.0" maxWidth="22.0" onAction="#pauseauto" prefHeight="22.0" prefWidth="22.0">
+                                             <graphic>
+                                                <ImageView fitHeight="22.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/icons8-pause-64%20(1).png" />
+                                                   </image>
+                                                   <effect>
+                                                      <InnerShadow color="#f8f5f5" />
+                                                   </effect>
+                                                </ImageView>
+                                             </graphic>
+                                             <tooltip>
+                                                <Tooltip text="Pausar Execução" />
+                                             </tooltip>
+                                          </JFXButton>
+                                          <JFXButton fx:id="btrefreshauto" blendMode="DIFFERENCE" cache="true" contentDisplay="GRAPHIC_ONLY" depthTest="DISABLE" maxHeight="22.0" maxWidth="22.0" onAction="#refreshauto" prefHeight="22.0" prefWidth="22.0">
+                                             <graphic>
+                                                <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/icons8-restart-48.png" />
+                                                   </image>
+                                                   <effect>
+                                                      <InnerShadow color="#f8f5f5" />
+                                                   </effect>
+                                                </ImageView>
+                                             </graphic>
+                                             <tooltip>
+                                                <Tooltip text="Resetar Execução" />
+                                             </tooltip>
+                                          </JFXButton>
+                                       </items>
+                                       <VBox.margin>
+                                          <Insets left="40.0" top="-15.0" />
+                                       </VBox.margin>
+                                       <effect>
+                                          <InnerShadow />
+                                       </effect>
+                                    </ToolBar>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets top="-20.0" />
+                                 </VBox.margin>
+                              </VBox>
+                              <HBox alignment="CENTER" fillHeight="false" VBox.vgrow="NEVER">
+                                 <children>
+                                    <ProgressIndicator fx:id="progressind" maxHeight="50.0" prefHeight="50.0" progress="0.0" style="-fx-font-size: 1.5em;" styleClass="progressind" visible="false" HBox.hgrow="NEVER">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <opaqueInsets>
+                                          <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                                       </opaqueInsets>
+                                    </ProgressIndicator>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="15.0" top="-5.0" />
+                                 </VBox.margin>
+                                 <padding>
+                                    <Insets bottom="5.0" top="5.0" />
+                                 </padding>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <HBox alignment="CENTER" blendMode="HARD_LIGHT" depthTest="DISABLE" fillHeight="false" focusTraversable="true" maxHeight="25.0" mouseTransparent="true" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <Label fx:id="trace" blendMode="HARD_LIGHT" cache="true" cacheHint="QUALITY" depthTest="ENABLE" ellipsisString="" graphicTextGap="0.0" maxHeight="25.0" maxWidth="500.0" mnemonicParsing="true" styleClass="lbverde2" textFill="#eef2f0" wrapText="true" HBox.hgrow="NEVER" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane id="dark-bluee" fx:id="anchorcena" blendMode="MULTIPLY" depthTest="DISABLE" focusTraversable="true" layoutX="1.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox alignment="CENTER" blendMode="HARD_LIGHT" depthTest="DISABLE" focusTraversable="true" layoutX="166.0" layoutY="32.0" spacing="15.0" styleClass="lbverde2" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <children>
+                              <JFXButton fx:id="btconf" alignment="CENTER" blendMode="DARKEN" contentDisplay="TOP" depthTest="DISABLE" graphicTextGap="0.0" maxHeight="90.0" maxWidth="95.0" minHeight="90.0" minWidth="95.0" onAction="#configuracao" onMouseEntered="#blinkconf" onMouseExited="#blinkconfexit" prefHeight="90.0" prefWidth="95.0" ripplerFill="#4bebd0" style="-fx-background-color: transparent;" text="ARQUIVO" textFill="#5cf5bf" wrapText="true" HBox.hgrow="NEVER">
+                                 <graphic>
+                                    <ImageView fx:id="imgvconf" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" focusTraversable="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/settings%20(2).png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip autoHide="true" text="Configurações">
+                                       <font>
+                                          <Font name="SimSun" size="14.0" />
+                                       </font>
+                                    </Tooltip>
+                                 </tooltip>
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                              <JFXButton fx:id="btserver" alignment="CENTER" blendMode="DARKEN" contentDisplay="TOP" depthTest="DISABLE" graphicTextGap="0.0" maxHeight="90.0" maxWidth="90.0" minHeight="90.0" minWidth="95.0" onAction="#server" onMouseEntered="#blinkserver" onMouseExited="#blinkserverexit" prefHeight="90.0" prefWidth="90.0" ripplerFill="#55f2d7" style="-fx-background-color: transparent;" text="SERVIDOR" textFill="#5cf5bf" wrapText="true" HBox.hgrow="SOMETIMES">
+                                 <graphic>
+                                    <ImageView fx:id="imgvserver" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" focusTraversable="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/database%20(4).png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip autoHide="true" text="Servidor">
+                                       <font>
+                                          <Font name="SimSun" size="14.0" />
+                                       </font>
+                                    </Tooltip>
+                                 </tooltip>
+                              </JFXButton>
+                              <JFXButton fx:id="btfiltro" alignment="CENTER" blendMode="DARKEN" contentDisplay="TOP" depthTest="DISABLE" graphicTextGap="0.0" maxHeight="90.0" maxWidth="90.0" minHeight="90.0" minWidth="90.0" onAction="#filtro" onMouseEntered="#blinkfiltro" onMouseExited="#blinkfiltroexit" prefHeight="90.0" prefWidth="90.0" ripplerFill="#55f2d7" stylesheets="@../styles/Styles.css" text="FILTROS" textFill="#5cf5bf" wrapText="true" HBox.hgrow="SOMETIMES">
+                                 <graphic>
+                                    <ImageView fx:id="imgvfiltro" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" focusTraversable="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/filter%20(1).png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip autoHide="true" text="Criar Filtros">
+                                       <font>
+                                          <Font name="SimSun" size="14.0" />
+                                       </font>
+                                    </Tooltip>
+                                 </tooltip>
+                              </JFXButton>
+                              <JFXButton fx:id="btoficio" alignment="CENTER" blendMode="DARKEN" contentDisplay="TOP" depthTest="DISABLE" graphicTextGap="0.0" maxHeight="90.0" maxWidth="90.0" minHeight="90.0" minWidth="90.0" onAction="#oficio" onMouseEntered="#blinkoficio" onMouseExited="#blinkoficioexit" prefHeight="90.0" prefWidth="90.0" text="OFICIOS" textFill="#5cf5bf" wrapText="true" HBox.hgrow="SOMETIMES">
+                                 <graphic>
+                                    <ImageView fx:id="imgvoficio" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" focusTraversable="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/icons8-ficheiro-submódulo-150%20(1).png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip autoHide="true" text="Oficio">
+                                       <font>
+                                          <Font name="SimSun" size="14.0" />
+                                       </font>
+                                    </Tooltip>
+                                 </tooltip>
+                              </JFXButton>
+                              <JFXButton fx:id="btoff" alignment="CENTER" blendMode="DARKEN" buttonType="RAISED" contentDisplay="TOP" depthTest="DISABLE" graphicTextGap="5.0" lineSpacing="5.0" maxHeight="90.0" maxWidth="90.0" minHeight="90.0" minWidth="90.0" onAction="#logout" onMouseEntered="#blinkoff" onMouseExited="#blinkoffexit" prefHeight="90.0" prefWidth="90.0" ripplerFill="#ebe7e7" text="OFF" textFill="#5cf5bff2" wrapText="true" HBox.hgrow="SOMETIMES">
+                                 <graphic>
+                                    <ImageView fx:id="imgvoff" depthTest="DISABLE" fitHeight="48.0" fitWidth="48.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/power-button%20(1).png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <tooltip>
+                                    <Tooltip autoHide="true" text="Desligar">
+                                       <font>
+                                          <Font name="SimSun" size="14.0" />
+                                       </font>
+                                    </Tooltip>
+                                 </tooltip>
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                                 <effect>
+                                    <InnerShadow choke="0.15" color="#e11313" height="32.86" radius="15.19" width="29.9" />
+                                 </effect>
+                              </JFXButton>
+                           </children>
+                           <padding>
+                              <Insets bottom="8.0" />
+                           </padding>
+                        </HBox>
+                        <VBox alignment="CENTER" blendMode="DIFFERENCE" depthTest="DISABLE" layoutX="10.0" layoutY="181.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="80.0">
+                           <children>
+                              <HBox alignment="CENTER_LEFT" depthTest="DISABLE" visible="false">
+                                 <children>
+                                    <Pane depthTest="DISABLE" HBox.hgrow="SOMETIMES">
+                                       <children>
+                                          <Text blendMode="SOFT_LIGHT" depthTest="DISABLE" fill="#a7e8da" fontSmoothingType="LCD" layoutX="59.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lbverde2" text="Visualizar Validação" />
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Pane>
+                                    <JFXCheckBox fx:id="jcbvisualizarvalidacao" alignment="CENTER" blendMode="HARD_LIGHT" checkedColor="#35cfdd" contentDisplay="GRAPHIC_ONLY" depthTest="DISABLE" disable="true" graphicTextGap="0.0" lineSpacing="4.0" maxWidth="30.0" minWidth="20.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefWidth="20.0" textFill="#e4e1e1" unCheckedColor="#f5f2f2" wrapText="true">
+                                       <tooltip>
+                                          <Tooltip autoHide="true" text="Envio Ofcial">
+                                             <font>
+                                                <Font name="SimSun" size="15.0" />
+                                             </font>
+                                          </Tooltip>
+                                       </tooltip>
+                                       <HBox.margin>
+                                          <Insets right="10.0" />
+                                       </HBox.margin>
+                                    </JFXCheckBox>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" depthTest="DISABLE">
+                                 <children>
+                                    <Pane depthTest="DISABLE" HBox.hgrow="SOMETIMES">
+                                       <children>
+                                          <Text blendMode="SOFT_LIGHT" depthTest="DISABLE" fill="#a7e8da" fontSmoothingType="LCD" layoutX="59.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lbverde2" text="Validar Detento Antes" />
+                                       </children>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Pane>
+                                    <JFXCheckBox fx:id="jcbvalidarbefore" alignment="CENTER" blendMode="HARD_LIGHT" checkedColor="#35cfdd" contentDisplay="GRAPHIC_ONLY" depthTest="DISABLE" graphicTextGap="0.0" lineSpacing="4.0" maxWidth="30.0" minWidth="20.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefWidth="20.0" textFill="#e4e1e1" unCheckedColor="#f5f2f2" wrapText="true">
+                                       <tooltip>
+                                          <Tooltip autoHide="true" text="Envio Ofcial">
+                                             <font>
+                                                <Font name="SimSun" size="15.0" />
+                                             </font>
+                                          </Tooltip>
+                                       </tooltip>
+                                       <HBox.margin>
+                                          <Insets right="5.0" />
+                                       </HBox.margin>
+                                    </JFXCheckBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets left="5.0" right="5.0" top="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER_LEFT" depthTest="DISABLE">
+                                 <children>
+                                    <Pane depthTest="DISABLE" HBox.hgrow="ALWAYS">
+                                       <children>
+                                          <Text blendMode="SOFT_LIGHT" depthTest="DISABLE" fill="#a7e8da" fontSmoothingType="LCD" layoutX="59.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="lbverde2" text="Enviar para Email Detento" />
+                                       </children>
+                                    </Pane>
+                                    <JFXCheckBox fx:id="jcbemail" alignment="CENTER" checkedColor="#35cfdd" contentDisplay="GRAPHIC_ONLY" depthTest="DISABLE" graphicTextGap="0.0" lineSpacing="4.0" maxWidth="30.0" minWidth="20.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefWidth="20.0" styleClass="bar" textFill="#e4e1e1" unCheckedColor="#f5f2f2" wrapText="true">
+                                       <tooltip>
+                                          <Tooltip autoHide="true" text="Envio Ofcial">
+                                             <font>
+                                                <Font name="SimSun" size="15.0" />
+                                             </font>
+                                          </Tooltip>
+                                       </tooltip>
+                                       <HBox.margin>
+                                          <Insets right="5.0" />
+                                       </HBox.margin>
+                                    </JFXCheckBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="5.0" left="5.0" right="5.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                           <effect>
+                              <DropShadow color="#685d5d" />
+                           </effect>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+                  <HBox alignment="CENTER" depthTest="DISABLE" disable="true" spacing="60.0" visible="false" AnchorPane.bottomAnchor="605.0" AnchorPane.leftAnchor="266.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0">
+                     <children>
+                        <VBox alignment="CENTER" spacing="5.0" HBox.hgrow="NEVER">
+                           <children>
+                              <ImageView fx:id="imgvservern" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/icons8-servidor-100%20(1).png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="lblservern" text="NOK" textFill="#ebe7e7" VBox.vgrow="NEVER" />
+                           </children>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox alignment="CENTER" depthTest="DISABLE" spacing="5.0" HBox.hgrow="NEVER">
+                           <children>
+                              <ImageView fx:id="imgvnet" disable="true" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/wifi%20(1).png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="lblnet" disable="true" text="OK" textFill="#f5f0f0" VBox.vgrow="NEVER">
+                                 <tooltip>
+                                    <Tooltip text="Status da  Internet">
+                                       <font>
+                                          <Font name="SimSun" size="15.0" />
+                                       </font>
+                                    </Tooltip>
+                                 </tooltip>
+                              </Label>
+                           </children>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </VBox>
+                        <HBox alignment="CENTER_RIGHT" depthTest="DISABLE" HBox.hgrow="NEVER">
+                           <children>
+                              <VBox alignment="CENTER" HBox.hgrow="NEVER">
+                                 <children>
+                                    <Label fx:id="lblrede" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="0.0" text="AGUARDANDO" textFill="#8a8484" wrapText="true" VBox.vgrow="NEVER">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </Label>
+                                    <JFXToggleButton fx:id="jtgbtmonitorarrede" alignment="CENTER_RIGHT" contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" maxHeight="30.0" minHeight="30.0" size="8.0" text="MONITORAR REDE" textFill="#37a1b9" toggleColor="#18d7c4" toggleLineColor="#5ff5e6e3" unToggleColor="#326885d2" unToggleLineColor="#787171f2" wrapText="true" VBox.vgrow="NEVER">
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                       <tooltip>
+                                          <Tooltip text="MONITORAR REDE">
+                                             <font>
+                                                <Font name="SimSun" size="15.0" />
+                                             </font>
+                                          </Tooltip>
+                                       </tooltip>
+                                    </JFXToggleButton>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="-70.0" />
+               </VBox.margin>
+               <effect>
+                  <DropShadow color="#f2f2f2" />
+               </effect>
+            </AnchorPane>
+         </children>
+         <HBox.margin>
+            <Insets top="-15.0" />
+         </HBox.margin>
+         <effect>
+            <DropShadow />
+         </effect>
+      </VBox>
+      <AnchorPane fx:id="aavalida" depthTest="DISABLE" style="-fx-background-color: transparent; -fx-background-radius: 15px;">
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+         <children>
+            <VBox fx:id="vbbvalida" alignment="TOP_CENTER" depthTest="DISABLE" layoutX="2.0" layoutY="271.0" spacing="3.0" style="-fx-background-radius: 15px; -fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-8.0">
+               <children>
+                  <JFXDrawer fx:id="drawerhelp" alignment="TOP_CENTER" defaultDrawerSize="0.0" depthTest="DISABLE" direction="TOP" focusTraversable="true" overLayVisible="false" resizableOnDrag="true" resizeContent="true" style="-fx-background-radius: 15px;" VBox.vgrow="NEVER">
+                     <children>
+                        <AnchorPane fx:id="anchorajuda" depthTest="DISABLE" style="-fx-background-color: #55f2d7; -fx-background-radius: 8px;">
+                           <children>
+                              <VBox fx:id="vbetapas" blendMode="MULTIPLY" fillWidth="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+                                 <children>
+                                    <VBox id="dark-blue" fx:id="vbeta" alignment="CENTER" depthTest="DISABLE" spacing="9.0" style="-fx-background-radius: 7px;">
+                                       <children>
+                                          <HBox alignment="CENTER_LEFT">
+                                             <children>
+                                                <ImageView fx:id="imgvstep1" blendMode="HARD_LIGHT" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/error.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" right="5.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <Label blendMode="ADD" text="Nome de Um arquivo xlsx" textFill="#c3c2c2">
+                                                   <font>
+                                                      <Font name="SimSun" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT">
+                                             <children>
+                                                <ImageView fx:id="imgvstep2" blendMode="HARD_LIGHT" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/error.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" right="5.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <Label blendMode="ADD" text="Nome de um Modelo com extensão" textFill="#c3c2c2">
+                                                   <font>
+                                                      <Font name="SimSun" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT">
+                                             <children>
+                                                <ImageView fx:id="imgvstep3" blendMode="HARD_LIGHT" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/error.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" right="5.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <Label blendMode="ADD" text="Servidor de Email Válido" textFill="#c3c2c2">
+                                                   <font>
+                                                      <Font name="SimSun" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT">
+                                             <children>
+                                                <ImageView fx:id="imgvstep4" blendMode="HARD_LIGHT" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/error.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" right="5.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <Label blendMode="ADD" text="Arquivo de Configuração" textFill="#c3c2c2">
+                                                   <font>
+                                                      <Font name="SimSun" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT">
+                                             <children>
+                                                <ImageView fx:id="imgvstep5" blendMode="HARD_LIGHT" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/error.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" right="5.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <Label blendMode="ADD" text="Filtros &lt;Opcional&gt;" textFill="#c3c2c2">
+                                                   <font>
+                                                      <Font name="SimSun" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER_LEFT">
+                                             <children>
+                                                <ImageView fx:id="imgvstep6" blendMode="HARD_LIGHT" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/error.png" />
+                                                   </image>
+                                                   <HBox.margin>
+                                                      <Insets left="5.0" right="5.0" />
+                                                   </HBox.margin>
+                                                </ImageView>
+                                                <Label blendMode="ADD" text="Arquivo de Filtro" textFill="#c3c2c2">
+                                                   <font>
+                                                      <Font name="SimSun" size="18.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="10.0" left="10.0" right="10.0" />
+                                       </padding>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </VBox>
+                                 </children>
+                                 <effect>
+                                    <InnerShadow color="#f8f1f1" />
+                                 </effect>
+                              </VBox>
+                              <Label alignment="CENTER" layoutX="126.0" text="Etapas" textFill="#3f7567" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="10.0">
+                                 <font>
+                                    <Font name="Rockwell Condensed" size="34.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                           <effect>
+                              <DropShadow color="#141414" height="0.24" radius="1.8450000000000002" width="9.14" />
+                           </effect>
+                        </AnchorPane>
+                     </children>
+                     <VBox.margin>
+                        <Insets left="2.0" right="1.0" top="-3.0" />
+                     </VBox.margin>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </JFXDrawer>
+                  <AnchorPane fx:id="anchorvalida" depthTest="DISABLE" style="-fx-background-color: transparent; -fx-background-radius: 15px;">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <children>
+                        <VBox fx:id="vboxvalidacao" alignment="TOP_CENTER" depthTest="DISABLE" spacing="3.0" style="-fx-background-color: #55f2d7; -fx-background-radius: 10px;" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="2.0" AnchorPane.topAnchor="1.0">
+                           <children>
+                              <VBox fx:id="vbval" depthTest="DISABLE">
+                                 <children>
+                                    <VBox id="dark-blue" fx:id="vboval" blendMode="HARD_LIGHT" depthTest="DISABLE">
+                                       <children>
+                                          <VBox fx:id="vbvalida" blendMode="MULTIPLY" depthTest="DISABLE" spacing="10.0">
+                                             <children>
+                                                <HBox alignment="CENTER_RIGHT" depthTest="DISABLE">
+                                                   <children>
+                                                      <Label text="Validação" textFill="#3f7567">
+                                                         <font>
+                                                            <Font name="Rockwell Condensed Bold" size="34.0" />
+                                                         </font>
+                                                         <HBox.margin>
+                                                            <Insets bottom="20.0" left="90.0" top="5.0" />
+                                                         </HBox.margin>
+                                                      </Label>
+                                                      <Pane maxWidth="80.0" HBox.hgrow="SOMETIMES">
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </Pane>
+                                                      <ImageView fx:id="imgvvalidatotal" blendMode="HARD_LIGHT" fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/icons8-time-machine-30.png" />
+                                                         </image>
+                                                         <HBox.margin>
+                                                            <Insets right="5.0" />
+                                                         </HBox.margin>
+                                                      </ImageView>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER_LEFT" depthTest="DISABLE">
+                                                   <children>
+                                                      <Label blendMode="MULTIPLY" text="Detento: " textFill="#807171">
+                                                         <font>
+                                                            <Font name="SimSun" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <JFXTextField fx:id="jtxfvalidanome" blendMode="COLOR_BURN" depthTest="DISABLE" editable="false" focusColor="#0d0d0d" style="-fx-text-fill: black;" unFocusColor="#0a0a0a" HBox.hgrow="ALWAYS" />
+                                                      <ImageView fx:id="imgvvalidanome" blendMode="HARD_LIGHT" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/icons8-time-machine-30.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER" depthTest="DISABLE">
+                                                   <children>
+                                                      <Label blendMode="MULTIPLY" text="Vara: " textFill="#807171">
+                                                         <font>
+                                                            <Font name="SimSun" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <JFXTextField fx:id="jtxfvalidavara" blendMode="COLOR_BURN" depthTest="DISABLE" editable="false" focusColor="#0a0a0a" style="-fx-text-fill: black;" unFocusColor="#111010" HBox.hgrow="ALWAYS" />
+                                                      <ImageView fx:id="imgvvalidavara" blendMode="HARD_LIGHT" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/icons8-time-machine-30.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER" depthTest="DISABLE">
+                                                   <children>
+                                                      <Label blendMode="MULTIPLY" text="Processo: " textFill="#807171">
+                                                         <font>
+                                                            <Font name="SimSun" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <JFXTextField fx:id="jtxfvalidaprocesso" blendMode="COLOR_BURN" depthTest="DISABLE" editable="false" focusColor="#0a0a0a" style="-fx-text-fill: black;" unFocusColor="#111010" HBox.hgrow="ALWAYS" />
+                                                      <ImageView fx:id="imgvvalidaprocesso" blendMode="HARD_LIGHT" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/icons8-time-machine-30.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER" depthTest="DISABLE">
+                                                   <children>
+                                                      <Label blendMode="MULTIPLY" text="Vep: " textFill="#807171">
+                                                         <font>
+                                                            <Font name="SimSun" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <JFXTextField fx:id="jtxfvalidavep" blendMode="COLOR_BURN" depthTest="DISABLE" editable="false" focusColor="#0a0a0a" style="-fx-text-fill: black;" unFocusColor="#111010" HBox.hgrow="ALWAYS" />
+                                                      <ImageView fx:id="imgvvalidavep" blendMode="HARD_LIGHT" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/icons8-time-machine-30.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER" depthTest="DISABLE">
+                                                   <children>
+                                                      <Label blendMode="MULTIPLY" text="Email: " textFill="#807171">
+                                                         <font>
+                                                            <Font name="SimSun" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <JFXTextField fx:id="jtxfvalidaemail" blendMode="COLOR_BURN" depthTest="DISABLE" editable="false" focusColor="#0a0a0a" style="-fx-text-fill: black;" unFocusColor="#111010" HBox.hgrow="ALWAYS" />
+                                                      <ImageView fx:id="imgvvalidaemail" blendMode="HARD_LIGHT" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/icons8-time-machine-30.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </children>
+                                                </HBox>
+                                                <HBox alignment="CENTER" depthTest="DISABLE">
+                                                   <children>
+                                                      <Label blendMode="MULTIPLY" text="Envio: " textFill="#807171">
+                                                         <font>
+                                                            <Font name="SimSun" size="18.0" />
+                                                         </font>
+                                                      </Label>
+                                                      <JFXTextField fx:id="jtxtfenvio" blendMode="COLOR_BURN" depthTest="DISABLE" editable="false" focusColor="#0a0a0a" style="-fx-text-fill: black;" unFocusColor="#111010" HBox.hgrow="ALWAYS" />
+                                                      <ImageView fx:id="imgvvalidaenvio" blendMode="HARD_LIGHT" fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                         <image>
+                                                            <Image url="@../images/icons8-time-machine-30.png" />
+                                                         </image>
+                                                      </ImageView>
+                                                   </children>
+                                                   <VBox.margin>
+                                                      <Insets bottom="15.0" />
+                                                   </VBox.margin>
+                                                </HBox>
+                                             </children>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </VBox>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                           <effect>
+                              <DropShadow color="#111111" height="3.21" radius="1.105" width="3.21" />
+                           </effect>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+   <padding>
+      <Insets right="4.0" top="15.0" />
+   </padding>
+</HBox>

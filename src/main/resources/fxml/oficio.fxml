@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="vbox" style="-fx-background-color: transparent;"
+	stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/8.0.141"
+	xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tecsoluction.robo.controller.OficioController">
+	<children>
+		<AnchorPane fx:id="anchor" onMouseDragged="#mousedrag"
+			onMousePressed="#mousepress" style="-fx-background-color: transparent;">
+			<children>
+				<AnchorPane id="dark-bluee" layoutX="10.0" layoutY="10.0"
+					AnchorPane.bottomAnchor="145.0" AnchorPane.leftAnchor="0.0"
+					AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+					<children>
+						<VBox alignment="CENTER" spacing="15.0"
+							AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+							<children>
+								<HBox alignment="CENTER" fillHeight="false" spacing="30.0">
+									<children>
+										<ImageView fitHeight="24.0" fitWidth="24.0"
+											pickOnBounds="true" preserveRatio="true">
+											<image>
+												<Image url="@../images/icons8-collage-filled-100.png" />
+											</image>
+										</ImageView>
+										<JFXTextField fx:id="jtxtpathoficio" focusColor="#54ffe2"
+											labelFloat="true" onMouseClicked="#openpathoficio" prefWidth="150.0"
+											promptText="Escolha onde será Salvo os Oficios Enviados"
+											styleClass="jtxf" text="vazio" unFocusColor="#fcf9f9">
+											<font>
+												<Font name="Bodoni MT Condensed" size="22.0" />
+											</font>
+										</JFXTextField>
+										<JFXButton fx:id="btsalvarpathoficio" onAction="#salvarcaminho"
+											style="-fx-border-color: #56f4c7;" text="Salvar Diretorio"
+											textFill="#56f4c7">
+											<HBox.margin>
+												<Insets bottom="10.0" left="10.0" right="10.0" top="25.0" />
+											</HBox.margin>
+										</JFXButton>
+										<JFXButton fx:id="btmudardiretorio" onAction="#mudardiretorio"
+											style="-fx-border-color: #56f4c7;" text="Mudar Diretorio"
+											textFill="#56f4c7">
+											<HBox.margin>
+												<Insets bottom="10.0" left="10.0" right="10.0" top="25.0" />
+											</HBox.margin>
+										</JFXButton>
+									</children>
+									<VBox.margin>
+										<Insets />
+									</VBox.margin>
+									<padding>
+										<Insets bottom="10.0" left="15.0" right="10.0" top="10.0" />
+									</padding>
+								</HBox>
+								<HBox alignment="CENTER" fillHeight="false" spacing="30.0">
+									<children>
+										<ImageView fitHeight="24.0" fitWidth="24.0"
+											pickOnBounds="true" preserveRatio="true">
+											<image>
+												<Image url="@../images/icons8-collage-filled-100.png" />
+											</image>
+										</ImageView>
+										<JFXTextField fx:id="jtxtsalvarmodelo"
+											focusColor="#63ffe5" labelFloat="true" onMouseClicked="#openmodelo"
+											prefWidth="150.0" promptText="Salve o Modelo do Oficio"
+											styleClass="jtxf" text="vazio" unFocusColor="#f8f6f6">
+											<font>
+												<Font name="Bodoni MT Condensed" size="22.0" />
+											</font>
+										</JFXTextField>
+										<JFXButton fx:id="btsalvarmodelo" onAction="#salvarmodelo"
+											style="-fx-border-color: #56f4c7;" text="Salvar Modelo"
+											textFill="#56f4c7">
+											<HBox.margin>
+												<Insets bottom="10.0" left="10.0" right="10.0" top="25.0" />
+											</HBox.margin>
+										</JFXButton>
+										<JFXButton fx:id="btmudarmodelo" onAction="#mudarmodelo"
+											style="-fx-border-color: #56f4c7;" text="Mudar Modelo"
+											textFill="#56f4c7">
+											<HBox.margin>
+												<Insets bottom="10.0" left="10.0" right="10.0" top="25.0" />
+											</HBox.margin>
+										</JFXButton>
+									</children>
+									<VBox.margin>
+										<Insets />
+									</VBox.margin>
+									<padding>
+										<Insets bottom="10.0" right="10.0" top="10.0" />
+									</padding>
+								</HBox>
+							</children>
+							<padding>
+								<Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+							</padding>
+						</VBox>
+					</children>
+				</AnchorPane>
+				<AnchorPane id="dark-bluee" fx:id="anchorcena"
+					focusTraversable="true" layoutX="1.0" stylesheets="@../styles/Styles.css"
+					AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+					AnchorPane.rightAnchor="0.0">
+					<children>
+						<HBox alignment="CENTER" cache="true" cacheHint="QUALITY"
+							focusTraversable="true" mouseTransparent="true"
+							style="-fx-background-color: transparent;"
+							AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0"
+							AnchorPane.rightAnchor="0.0">
+							<children>
+								<Label fx:id="trace" text="." textFill="#3ba88d" wrapText="true"
+									HBox.hgrow="NEVER" />
+							</children>
+						</HBox>
+						<HBox alignment="CENTER" focusTraversable="true" layoutX="166.0"
+							layoutY="32.0" spacing="20.0" AnchorPane.leftAnchor="0.0"
+							AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+							<children>
+								<JFXButton fx:id="btsalvar" contentDisplay="GRAPHIC_ONLY"
+									onAction="#salvaroficio" HBox.hgrow="NEVER">
+									<graphic>
+										<ImageView fx:id="imgvconf" fitHeight="64.0"
+											fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+											<image>
+												<Image url="@../images/icons8-checkmark-48.png" />
+											</image>
+										</ImageView>
+									</graphic>
+									<tooltip>
+										<Tooltip autoHide="true" text="Salvar">
+											<font>
+												<Font name="SimSun" size="14.0" />
+											</font>
+										</Tooltip>
+									</tooltip>
+								</JFXButton>
+								<JFXButton fx:id="btfechar" contentDisplay="GRAPHIC_ONLY"
+									onAction="#fechar" HBox.hgrow="NEVER">
+									<graphic>
+										<ImageView fx:id="imgvfechar" fitHeight="64.0"
+											fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+											<image>
+												<Image url="@../images/icons8-delete-48.png" />
+											</image>
+										</ImageView>
+									</graphic>
+									<tooltip>
+										<Tooltip autoHide="true" text="Fechar">
+											<font>
+												<Font name="SimSun" size="14.0" />
+											</font>
+										</Tooltip>
+									</tooltip>
+								</JFXButton>
+							</children>
+						</HBox>
+						<HBox alignment="CENTER" AnchorPane.leftAnchor="0.0"
+							AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="90.0">
+							<children>
+								<ProgressIndicator fx:id="progressind"
+									progress="0.0" visible="false" />
+							</children>
+						</HBox>
+					</children>
+				</AnchorPane>
+			</children>
+			<effect>
+				<InnerShadow choke="0.09" color="#9cfcda" height="13.59"
+					radius="8.1475" />
+			</effect>
+		</AnchorPane>
+	</children>
+</VBox>

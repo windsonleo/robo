@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXToggleButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.AmbientLight?>
+<?import javafx.scene.ParallelCamera?>
+<?import javafx.scene.PerspectiveCamera?>
+<?import javafx.scene.PointLight?>
+<?import javafx.scene.SubScene?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+
+<fx:root fx:id="vbb" fillWidth="false" style="-fx-background-color: transparent; -fx-background-color: null;" type="VBox" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tecsoluction.plantao.controller.AutomaticoController">
+   <children>
+      <AnchorPane>
+         <children>
+            <AnchorPane id="dark-bluee" layoutX="1.0" layoutY="207.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="562.0" stylesheets="@Styles.css">
+               <children>
+                  <VBox alignment="BOTTOM_CENTER" blendMode="SRC_ATOP" cache="true" cacheHint="QUALITY" depthTest="ENABLE" stylesheets="@Styles.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="75.0">
+                     <children>
+                        <HBox alignment="CENTER" fillHeight="false" VBox.vgrow="ALWAYS">
+                           <children>
+                              <ProgressIndicator prefHeight="30.0" HBox.hgrow="ALWAYS" />
+                              <Label styleClass="lbverde" stylesheets="@Styles.css" text="Enviar Email" textFill="#3afcdf" HBox.hgrow="ALWAYS">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                              <JFXToggleButton contentDisplay="GRAPHIC_ONLY" size="15.0" toggleColor="#15ebcd" toggleLineColor="#40fff9" unToggleColor="#f1f5f8cf" unToggleLineColor="#edf1f2" wrapText="true" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" fillHeight="false">
+                           <children>
+                              <ProgressIndicator prefHeight="30.0" />
+                              <Label styleClass="lbbranca" stylesheets="@Styles.css" text="Criar Tarefa" textFill="#f2eded">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Label>
+                              <JFXToggleButton contentDisplay="GRAPHIC_ONLY" size="15.0" toggleColor="#15ebcd" toggleLineColor="#40fff9" unToggleColor="#e7ebeecf" unToggleLineColor="#edf1f2" wrapText="true" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane id="dark-bluee" focusTraversable="true" layoutX="1.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" stylesheets="@Styles.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <SubScene fill="#b4ba0dbe" height="259.0" layoutX="-101.0" layoutY="-183.0" opacity="0.49" rotate="131.0" width="204.0">
+                    <root>
+                      <Region />
+                    </root>
+                     <effect>
+                        <BoxBlur height="93.03" width="77.86" />
+                     </effect>
+                  </SubScene>
+                  <PerspectiveCamera rotate="-178.1" scaleY="2.0" scaleZ="3.0" translateX="4.0" translateY="2.0" translateZ="5.0">
+                     <rotationAxis>
+                        <Point3D y="8.0" z="5.0" />
+                     </rotationAxis>
+                  </PerspectiveCamera>
+                  <ParallelCamera farClip="400.0" nearClip="0.44" rotate="-97.6">
+                     <rotationAxis>
+                        <Point3D x="7.0" y="3.0" z="2.0" />
+                     </rotationAxis>
+                  </ParallelCamera>
+                  <AmbientLight color="CHARTREUSE" rotate="180.0">
+                     <rotationAxis>
+                        <Point3D y="7.0" z="7.0" />
+                     </rotationAxis>
+                  </AmbientLight>
+                  <PointLight color="CHARTREUSE" layoutX="518.0" layoutY="100.0" rotate="170.8">
+                     <rotationAxis>
+                        <Point3D x="8.0" y="6.0" z="5.0" />
+                     </rotationAxis>
+                  </PointLight>
+               </children>
+            </AnchorPane>
+         </children>
+         <effect>
+            <InnerShadow choke="0.09" color="#9cfcda" height="13.59" radius="8.1475" />
+         </effect>
+      </AnchorPane>
+   </children>
+</fx:root>

@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.SubScene?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="vbox" cache="true" cacheHint="QUALITY" depthTest="ENABLE" style="-fx-background-color: #55f2d7;" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tecsoluction.robo.controller.ConfiguracaoController">
+	<children>
+		<HBox id="dark-bluee" alignment="CENTER_LEFT" blendMode="HARD_LIGHT">
+			<children>
+				<ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+					<image>
+						<Image url="@../images/fd.png" />
+					</image>
+					<HBox.margin>
+						<Insets bottom="2.0" left="2.0" top="2.0" />
+					</HBox.margin>
+				</ImageView>
+				<HBox alignment="CENTER_RIGHT" depthTest="DISABLE" style="-fx-background-color: transparent;" HBox.hgrow="SOMETIMES">
+					<children>
+						<JFXButton fx:id="btsalvar" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" depthTest="DISABLE" graphicTextGap="0.0" onAction="#salvarnome" textFill="#f5f8f7" HBox.hgrow="NEVER">
+							<graphic>
+								<ImageView fx:id="imgvconf" depthTest="DISABLE" fitHeight="30.0" fitWidth="30.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@../images/icons8-save-close-96.png" />
+									</image>
+								</ImageView>
+							</graphic>
+							<tooltip>
+								<Tooltip autoHide="true" text="Salvar">
+									<font>
+										<Font name="SimSun" size="14.0" />
+									</font>
+								</Tooltip>
+							</tooltip>
+						</JFXButton>
+						<JFXButton fx:id="btfechar" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" depthTest="DISABLE" graphicTextGap="0.0" onAction="#fechar" textFill="#fcfcfc">
+							<graphic>
+								<ImageView depthTest="DISABLE" fitHeight="30.0" fitWidth="30.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@../images/icons8-delete-48.png" />
+									</image>
+								</ImageView>
+							</graphic>
+							<tooltip>
+								<Tooltip autoHide="true" text="Fechar">
+									<font>
+										<Font name="SimSun" size="14.0" />
+									</font>
+								</Tooltip>
+							</tooltip>
+						</JFXButton>
+					</children>
+				</HBox>
+			</children>
+		</HBox>
+		<AnchorPane fx:id="anchor" blendMode="MULTIPLY" depthTest="DISABLE" onMouseDragged="#mousedrag" onMousePressed="#mousepress" style="-fx-background-color: transparent;">
+			<children>
+				<AnchorPane id="dark-bluee" blendMode="LIGHTEN" depthTest="DISABLE" layoutX="1.0" layoutY="207.0" AnchorPane.bottomAnchor="155.0" AnchorPane.leftAnchor="-3.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+					<children>
+						<VBox depthTest="DISABLE" layoutX="10.0" layoutY="10.0" spacing="25.0" AnchorPane.bottomAnchor="120.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+							<children>
+								<HBox alignment="CENTER_LEFT" blendMode="ADD" VBox.vgrow="ALWAYS">
+									<children>
+										<ImageView blendMode="OVERLAY" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" style="-fx-text-fill: #6df8da;">
+											<image>
+												<Image url="@../images/icons8-ms-excel-100%20(1).png" />
+											</image>
+											<HBox.margin>
+												<Insets right="5.0" />
+											</HBox.margin>
+										</ImageView>
+										<JFXTextField fx:id="jtxtfarquivonome" blendMode="ADD" focusColor="#fafcfc" labelFloat="true" promptText="Digite o Nome do Arquivo" style="-fx-text-fill: white; -fx-prompt-text-fill: #6df8da;" stylesheets="@../styles/Styles.css" text="kkk" unFocusColor="#74eed4" HBox.hgrow="ALWAYS">
+											<styleClass>
+												<String fx:value="jtxf" />
+												<String fx:value="lbverde2" />
+											</styleClass>
+										</JFXTextField>
+									</children>
+								</HBox>
+								<HBox alignment="CENTER_LEFT" VBox.vgrow="ALWAYS">
+									<children>
+										<ImageView blendMode="ADD" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+											<image>
+												<Image url="@../images/icons8-ms-word-100.png" />
+											</image>
+											<HBox.margin>
+												<Insets right="5.0" />
+											</HBox.margin>
+										</ImageView>
+										<JFXTextField fx:id="jtxtfmodelonome" blendMode="ADD" focusColor="#f9fbfc" labelFloat="true" promptText="Digite o Nome do Modelo" style="-fx-text-fill: white; -fx-prompt-text-fill: #6df8da;" stylesheets="@../styles/Styles.css" text="MODELO5.doc" unFocusColor="#69f5c4" HBox.hgrow="ALWAYS">
+											<styleClass>
+												<String fx:value="jtxf" />
+												<String fx:value="lbverde2" />
+											</styleClass>
+										</JFXTextField>
+									</children>
+								</HBox>
+							</children>
+							<padding>
+								<Insets bottom="10.0" left="5.0" right="5.0" top="5.0" />
+							</padding>
+						</VBox>
+						<SubScene fx:id="subcena" fill="#b4ba0dbe" focusTraversable="true" height="90.0" layoutX="347.0" layoutY="26.0" opacity="0.36" pickOnBounds="true" rotate="171.6" visible="false" width="68.0">
+							<root>
+								<Region />
+							</root>
+							<rotationAxis>
+								<Point3D x="3.0" y="5.0" z="9.0" />
+							</rotationAxis>
+							<effect>
+								<BoxBlur height="108.21" iterations="3" width="47.5" />
+							</effect>
+						</SubScene>
+					</children>
+				</AnchorPane>
+				<AnchorPane fx:id="anchorcena" blendMode="DIFFERENCE" depthTest="DISABLE" focusTraversable="true" layoutX="1.0" maxHeight="150.0" minHeight="150.0" prefHeight="150.0" stylesheets="@../styles/Styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="390.0">
+					<children>
+						<HBox alignment="CENTER_LEFT" depthTest="DISABLE" focusTraversable="true" mouseTransparent="true" style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+							<children>
+								<Label fx:id="trace" styleClass="lbverde2" textFill="#f9fcfb" wrapText="true" HBox.hgrow="NEVER">
+									<HBox.margin>
+										<Insets top="10.0" />
+									</HBox.margin>
+									<padding>
+										<Insets top="10.0" />
+									</padding>
+								</Label>
+							</children>
+						</HBox>
+						<HBox alignment="CENTER" depthTest="DISABLE" fillHeight="false" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+							<children>
+								<ProgressIndicator fx:id="progressind" maxHeight="30.0" progress="0.0" styleClass="progressind" visible="false">
+									<HBox.margin>
+										<Insets bottom="10.0" />
+									</HBox.margin>
+								</ProgressIndicator>
+							</children>
+						</HBox>
+					</children>
+				</AnchorPane>
+			</children>
+			<effect>
+				<InnerShadow choke="0.09" color="#141313" height="13.59" radius="8.1475" />
+			</effect>
+			<VBox.margin>
+				<Insets />
+			</VBox.margin>
+		</AnchorPane>
+	</children>
+	<effect>
+		<InnerShadow choke="0.09" color="#1b1a1a" height="23.97" radius="10.7425" />
+	</effect>
+</VBox>

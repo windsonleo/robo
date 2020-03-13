@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane fx:id="stackroot" maxHeight="100.0" maxWidth="100.0"
+	minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0"
+	style="-fx-background-color: transparent;" stylesheets="@../styles/Styles.css"
+	xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="com.tecsoluction.robo.controller.SplashController">
+	<children>
+		<AnchorPane fx:id="anchor" maxHeight="100.0" maxWidth="100.0"
+			minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0"
+			style="-fx-background-color: transparent;" stylesheets="@../styles/Styles.css">
+			<children>
+				<Pane fx:id="panefd" depthTest="DISABLE" layoutX="26.0"
+					prefHeight="0.0" prefWidth="180.0" style="-fx-background-color: white;"
+					stylesheets="@../styles/Styles.css" AnchorPane.bottomAnchor="0.0"
+					AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+				<ImageView fx:id="imgvfd" cache="true" cacheHint="SCALE_AND_ROTATE"
+					depthTest="ENABLE" fitHeight="100.0" fitWidth="100.0" layoutX="3.0"
+					layoutY="4.0" pickOnBounds="true" preserveRatio="true"
+					AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+					AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+					<image>
+						<Image fx:id="imgfd" url="@../images/fdd.png" />
+					</image>
+				</ImageView>
+			</children>
+		</AnchorPane>
+		<ImageView id="dark-bluee" cache="true" cacheHint="SCALE_AND_ROTATE"
+			depthTest="ENABLE" fitHeight="102.0" fitWidth="102.0" pickOnBounds="true"
+			preserveRatio="true">
+			<image>
+				<Image url="@../images/qdd.png" />
+			</image>
+		</ImageView>
+	</children>
+</StackPane>

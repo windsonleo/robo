@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Point3D?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="vbox" depthTest="DISABLE" style="-fx-background-color: #55f2d7;"
+	stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/8.0.141"
+	xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tecsoluction.robo.controller.ServidorController">
+	<children>
+		<HBox id="dark-bluee" alignment="CENTER_LEFT" blendMode="HARD_LIGHT">
+			<children>
+				<ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true"
+					preserveRatio="true">
+					<image>
+						<Image url="@../images/fd.png" />
+					</image>
+					<HBox.margin>
+						<Insets bottom="2.0" left="2.0" top="2.0" />
+					</HBox.margin>
+				</ImageView>
+				<HBox alignment="CENTER_RIGHT" depthTest="DISABLE"
+					style="-fx-background-color: transparent;" HBox.hgrow="SOMETIMES">
+					<children>
+						<JFXButton fx:id="bttestar" alignment="CENTER"
+							contentDisplay="GRAPHIC_ONLY" depthTest="DISABLE" graphicTextGap="0.0"
+							onAction="#testar" styleClass="big-button" text="TESTAR"
+							textFill="#fcfcfc">
+							<graphic>
+								<ImageView fx:id="imgvcon" depthTest="DISABLE"
+									fitHeight="30.0" fitWidth="30.0" focusTraversable="true"
+									pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@../images/wifi.png" />
+									</image>
+								</ImageView>
+							</graphic>
+							<tooltip>
+								<Tooltip autoHide="true" text="Testar Servidor">
+									<font>
+										<Font name="SimSun" size="14.0" />
+									</font>
+								</Tooltip>
+							</tooltip>
+						</JFXButton>
+						<JFXButton fx:id="btsalvar" alignment="CENTER"
+							contentDisplay="GRAPHIC_ONLY" depthTest="DISABLE" graphicTextGap="0.0"
+							onAction="#salvarserver" text="SALVAR" textFill="#f9fcfb"
+							wrapText="true" HBox.hgrow="NEVER">
+							<graphic>
+								<ImageView depthTest="DISABLE" fitHeight="30.0"
+									fitWidth="30.0" focusTraversable="true" pickOnBounds="true"
+									preserveRatio="true">
+									<image>
+										<Image url="@../images/icons8-save-close-96.png" />
+									</image>
+								</ImageView>
+							</graphic>
+							<tooltip>
+								<Tooltip autoHide="true" text="Salvar">
+									<font>
+										<Font name="SimSun" size="14.0" />
+									</font>
+								</Tooltip>
+							</tooltip>
+						</JFXButton>
+						<JFXButton fx:id="btfechar" alignment="CENTER"
+							contentDisplay="GRAPHIC_ONLY" depthTest="DISABLE" graphicTextGap="0.0"
+							onAction="#fechar" styleClass="lbverde2" text="FECHAR" textFill="#fcfcfc">
+							<graphic>
+								<ImageView depthTest="DISABLE" fitHeight="30.0"
+									fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@../images/icons8-delete-48.png" />
+									</image>
+								</ImageView>
+							</graphic>
+							<tooltip>
+								<Tooltip autoHide="true" text="Fechar">
+									<font>
+										<Font name="SimSun" size="14.0" />
+									</font>
+								</Tooltip>
+							</tooltip>
+						</JFXButton>
+					</children>
+				</HBox>
+			</children>
+		</HBox>
+		<AnchorPane fx:id="anchor" blendMode="MULTIPLY" depthTest="DISABLE"
+			onMouseDragged="#mousedrag" onMousePressed="#mousepress" prefHeight="508.0"
+			prefWidth="450.0" style="-fx-background-color: transparent;">
+			<children>
+				<AnchorPane id="dark-bluee" blendMode="OVERLAY"
+					depthTest="DISABLE" AnchorPane.bottomAnchor="155.0"
+					AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+					AnchorPane.topAnchor="0.0">
+					<children>
+						<VBox alignment="CENTER_LEFT" blendMode="ADD" depthTest="DISABLE"
+							spacing="25.0" style="-fx-background-color: transparent;"
+							AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+							AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+							<children>
+								<JFXTextField fx:id="jtxtusuario" alignment="TOP_LEFT"
+									blendMode="EXCLUSION" focusColor="#62effc" labelFloat="true"
+									promptText="Digite o Email "
+									style="-fx-text-fill: white; -fx-prompt-text-fill: #6df8da;"
+									stylesheets="@../styles/Styles.css" text="windson.m.bezerra@gmail.com"
+									unFocusColor="#868686">
+									<font>
+										<Font name="SimSun" size="22.0" />
+									</font>
+									<styleClass>
+										<String fx:value="jtxf" />
+										<String fx:value="lbverde2" />
+									</styleClass>
+								</JFXTextField>
+								<HBox alignment="CENTER_LEFT" styleClass="lbverde2">
+									<children>
+										<JFXPasswordField fx:id="jtxtsenha"
+											blendMode="EXCLUSION" focusColor="#55ebca" labelFloat="true"
+											promptText="Digite a Senha"
+											style="-fx-text-fill: white; -fx-prompt-text-fill: #6df8da;"
+											styleClass="lbverde2" stylesheets="@../styles/Styles.css"
+											text="mudar@123@mudar" unFocusColor="#868686" HBox.hgrow="ALWAYS">
+											<font>
+												<Font name="SimSun" size="24.0" />
+											</font>
+										</JFXPasswordField>
+										<JFXTextField fx:id="jtxtversenha" alignment="CENTER"
+											disable="true" editable="false" focusColor="#62effc"
+											labelFloat="true" prefHeight="27.0" promptText="Senha"
+											style="-fx-text-fill: white; -fx-prompt-text-fill: #6df8da;"
+											stylesheets="@../styles/Styles.css" unFocusColor="#868686">
+											<font>
+												<Font name="SimSun" size="24.0" />
+											</font>
+											<styleClass>
+												<String fx:value="jtxf" />
+												<String fx:value="lbverde2" />
+											</styleClass>
+										</JFXTextField>
+										<ImageView fx:id="imgvverpassword" fitHeight="24.0"
+											fitWidth="24.0" onMouseClicked="#mostrarsenha" pickOnBounds="true"
+											preserveRatio="true">
+											<image>
+												<Image url="@../images/icons8-password-30.png" />
+											</image>
+										</ImageView>
+									</children>
+								</HBox>
+								<JFXTextField fx:id="jtxthost" blendMode="EXCLUSION"
+									focusColor="#62effc" labelFloat="true" promptText="Ex:  smtps.expresso.pe.gov.br"
+									style="-fx-text-fill: white; -fx-prompt-text-fill: #6df8da;"
+									stylesheets="@../styles/Styles.css" text="smtp.gmail.com"
+									unFocusColor="#868686">
+									<font>
+										<Font name="SimSun" size="24.0" />
+									</font>
+									<styleClass>
+										<String fx:value="jtxf" />
+										<String fx:value="lbverde2" />
+									</styleClass>
+								</JFXTextField>
+								<JFXTextField fx:id="jtxtporta" blendMode="EXCLUSION"
+									focusColor="#62effc" labelFloat="true" promptText="Digite a porta Ex: 587"
+									style="-fx-text-fill: white; -fx-prompt-text-fill: #6df8da;"
+									stylesheets="@../styles/Styles.css" text="587" unFocusColor="#868686"
+									VBox.vgrow="ALWAYS">
+									<font>
+										<Font name="SimSun" size="24.0" />
+									</font>
+									<styleClass>
+										<String fx:value="jtxf" />
+										<String fx:value="lbverde2" />
+									</styleClass>
+								</JFXTextField>
+								<JFXTextField fx:id="jtxtprotocolo" blendMode="EXCLUSION"
+									focusColor="#62effc" labelFloat="true" promptText="Digite o Protocolo Ex: smtps"
+									style="-fx-text-fill: white; -fx-prompt-text-fill: #6df8da;"
+									stylesheets="@../styles/Styles.css" text="smtps" unFocusColor="#868686">
+									<font>
+										<Font name="SimSun" size="24.0" />
+									</font>
+									<styleClass>
+										<String fx:value="jtxf" />
+										<String fx:value="lbverde2" />
+									</styleClass>
+								</JFXTextField>
+								<Label fx:id="lbvalida" alignment="CENTER" contentDisplay="CENTER"
+									layoutX="14.0" layoutY="14.0" style="&#10;" text="validar"
+									textFill="#e8203b" visible="false" wrapText="false"
+									AnchorPane.leftAnchor="0.0">
+									<VBox.margin>
+										<Insets left="200.0" />
+									</VBox.margin>
+								</Label>
+							</children>
+							<padding>
+								<Insets top="25.0" />
+							</padding>
+						</VBox>
+					</children>
+				</AnchorPane>
+				<AnchorPane fx:id="anchorcena" blendMode="HARD_LIGHT"
+					depthTest="DISABLE" focusTraversable="true" layoutX="1.0"
+					maxHeight="150.0" prefHeight="150.0" AnchorPane.bottomAnchor="0.0"
+					AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+					<children>
+						<HBox id="dark-bluee" alignment="CENTER_LEFT" blendMode="MULTIPLY"
+							focusTraversable="true" mouseTransparent="true"
+							style="-fx-background-color: transparent;"
+							AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+							AnchorPane.rightAnchor="0.0">
+							<children>
+								<Label fx:id="trace" styleClass="lbverde2" textFill="WHITE"
+									wrapText="true" HBox.hgrow="NEVER" />
+							</children>
+						</HBox>
+						<HBox alignment="CENTER" depthTest="DISABLE"
+							AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0"
+							AnchorPane.rightAnchor="0.0">
+							<children>
+								<ProgressIndicator fx:id="progressind"
+									maxHeight="40.0" progress="0.0" styleClass="progressind"
+									visible="false" />
+							</children>
+						</HBox>
+					</children>
+				</AnchorPane>
+			</children>
+			<effect>
+				<InnerShadow height="9.14" radius="5.5525" width="15.07" />
+			</effect>
+		</AnchorPane>
+	</children>
+	<rotationAxis>
+		<Point3D x="-5.0" y="-90.0" z="1.0" />
+	</rotationAxis>
+	<effect>
+		<InnerShadow />
+	</effect>
+</VBox>

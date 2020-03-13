@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXTreeTableView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="vbox" alignment="TOP_CENTER" blendMode="ADD"
+	depthTest="DISABLE" style="-fx-background-color: #55f2d7;" stylesheets="@../styles/Styles.css"
+	xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="com.tecsoluction.robo.controller.FiltroController">
+	<children>
+		<HBox id="dark-bluee" alignment="CENTER_LEFT" blendMode="HARD_LIGHT">
+			<children>
+				<ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true"
+					preserveRatio="true">
+					<image>
+						<Image url="@../images/fd.png" />
+					</image>
+					<HBox.margin>
+						<Insets bottom="2.0" left="5.0" top="2.0" />
+					</HBox.margin>
+				</ImageView>
+				<HBox alignment="CENTER_RIGHT" depthTest="DISABLE"
+					style="-fx-background-color: transparent;" HBox.hgrow="SOMETIMES">
+					<children>
+						<JFXButton fx:id="btsalvar" alignment="CENTER"
+							contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0" onAction="#salvarfiltro"
+							text="SALVAR" textFill="#f9fcfb" wrapText="true" HBox.hgrow="NEVER">
+							<graphic>
+								<ImageView fitHeight="30.0" fitWidth="30.0"
+									focusTraversable="true" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@../images/icons8-save-close-96.png" />
+									</image>
+								</ImageView>
+							</graphic>
+							<tooltip>
+								<Tooltip autoHide="true" text="Salvar">
+									<font>
+										<Font name="SimSun" size="14.0" />
+									</font>
+								</Tooltip>
+							</tooltip>
+						</JFXButton>
+						<JFXButton fx:id="btfechar" alignment="CENTER"
+							contentDisplay="GRAPHIC_ONLY" depthTest="DISABLE" graphicTextGap="0.0"
+							onAction="#fechar" styleClass="lbverde2" text="FECHAR" textFill="#fcfcfc">
+							<graphic>
+								<ImageView depthTest="DISABLE" fitHeight="30.0"
+									fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+									<image>
+										<Image url="@../images/icons8-delete-48.png" />
+									</image>
+								</ImageView>
+							</graphic>
+							<tooltip>
+								<Tooltip autoHide="true" text="Fechar">
+									<font>
+										<Font name="SimSun" size="14.0" />
+									</font>
+								</Tooltip>
+							</tooltip>
+						</JFXButton>
+					</children>
+				</HBox>
+			</children>
+		</HBox>
+		<AnchorPane fx:id="anchor" blendMode="MULTIPLY" depthTest="DISABLE"
+			onMouseDragged="#mousedrag" onMousePressed="#mousepress"
+			style="-fx-background-color: transparent;">
+			<children>
+				<VBox id="dark-bluee" blendMode="OVERLAY" depthTest="DISABLE"
+					AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="0.0"
+					AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+					<children>
+						<HBox alignment="BASELINE_CENTER" spacing="5.0" styleClass="lbverde2"
+							VBox.vgrow="ALWAYS">
+							<children>
+								<VBox spacing="5.0" HBox.hgrow="ALWAYS">
+									<children>
+										<JFXCheckBox fx:id="jchbdetento" blendMode="ADD"
+											checkedColor="#53eee4" disable="true" onAction="#acaocheck"
+											text="Detento" textFill="#f8f8f8" unCheckedColor="#f8f6f6" />
+										<JFXCheckBox fx:id="jchbnotificacao" blendMode="ADD"
+											checkedColor="#53eee4" disable="true" onAction="#acaocheck"
+											text="Notificação" textFill="#f8f8f8" unCheckedColor="#f8f6f6" />
+										<JFXCheckBox fx:id="jchbviolacao" blendMode="DIFFERENCE"
+											checkedColor="#53eee4" disable="true" onAction="#acaocheck"
+											text="Violação" textFill="#f8f8f8" unCheckedColor="#f8f6f6" />
+										<JFXCheckBox fx:id="jchbregistro" blendMode="DIFFERENCE"
+											checkedColor="#53eee4" onAction="#acaocheck" text="Registro"
+											textFill="#f8f8f8" unCheckedColor="#f8f6f6" />
+									</children>
+								</VBox>
+								<VBox alignment="CENTER_LEFT" spacing="5.0">
+									<children>
+										<JFXComboBox fx:id="jcbcampo" focusColor="#e6e7e8"
+											prefWidth="300.0" promptText="Escolha o Campo" style="-fx-prompt-text-fill: white;"
+											unFocusColor="#eeeded" visibleRowCount="6" VBox.vgrow="ALWAYS" />
+										<HBox alignment="CENTER_LEFT" VBox.vgrow="ALWAYS">
+											<children>
+												<JFXTextField fx:id="jtxtfiltro" focusColor="#f0f5f5"
+													promptText="Digite o Filtro "
+													style="-fx-text-fill: #6df8da; -fx-prompt-text-fill: white;"
+													stylesheets="@../styles/Styles.css" unFocusColor="#ebe5e5"
+													HBox.hgrow="ALWAYS">
+													<font>
+														<Font name="SimSun" size="22.0" />
+													</font>
+												</JFXTextField>
+												<JFXButton fx:id="btaddfiltro" alignment="CENTER"
+													contentDisplay="GRAPHIC_ONLY" graphicTextGap="0.0"
+													onAction="#addfiltro" styleClass="lbverde2" text="ADD"
+													textFill="#fcfcfc" wrapText="true">
+													<graphic>
+														<ImageView fx:id="imgvcon" fitHeight="24.0"
+															fitWidth="24.0" focusTraversable="true" pickOnBounds="true"
+															preserveRatio="true">
+															<image>
+																<Image url="@../images/add.png" />
+															</image>
+														</ImageView>
+													</graphic>
+													<tooltip>
+														<Tooltip autoHide="true" text="Adicionar Filtro">
+															<font>
+																<Font name="SimSun" size="14.0" />
+															</font>
+														</Tooltip>
+													</tooltip>
+												</JFXButton>
+											</children>
+										</HBox>
+									</children>
+								</VBox>
+							</children>
+						</HBox>
+						<HBox alignment="CENTER_RIGHT" styleClass="big-button"
+							VBox.vgrow="SOMETIMES">
+							<VBox.margin>
+								<Insets />
+							</VBox.margin>
+							<children>
+								<JFXTextField fx:id="filterField" alignment="CENTER"
+									blendMode="MULTIPLY" focusColor="#68f2fc" promptText="Pesquisa"
+									style="-fx-prompt-text-fill: white;" styleClass="big-button"
+									unFocusColor="#f7f8f8" HBox.hgrow="ALWAYS">
+									<font>
+										<Font name="SimSun" size="20.0" />
+									</font>
+									<effect>
+										<InnerShadow choke="0.03" color="#b2cccd" height="3.21"
+											radius="4.07" width="15.07" />
+									</effect>
+								</JFXTextField>
+								<ImageView blendMode="MULTIPLY" fitHeight="30.0"
+									fitWidth="30.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true"
+									preserveRatio="true">
+									<image>
+										<Image url="@../images/icons8-search-filled-100%20(2).png" />
+									</image>
+								</ImageView>
+							</children>
+						</HBox>
+						<JFXTreeTableView fx:id="tableview" blendMode="OVERLAY"
+							editable="true" stylesheets="@../styles/Styles.css"
+							tableMenuButtonVisible="true">
+							<columnResizePolicy>
+								<TreeTableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+							</columnResizePolicy>
+						</JFXTreeTableView>
+						<HBox spacing="5.0" styleClass="lbverde2">
+							<children>
+								<Label text="Total de Registros:" textFill="#b9b3b3" />
+								<Label fx:id="size" text=" size" textFill="#7da6f0" />
+							</children>
+						</HBox>
+					</children>
+					<padding>
+						<Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+					</padding>
+				</VBox>
+			</children>
+			<effect>
+				<InnerShadow choke="0.17" color="#23ebd4" height="15.32"
+					offsetY="-2.0" radius="4.0725" width="2.97" />
+			</effect>
+		</AnchorPane>
+		<AnchorPane id="dark-bluee" fx:id="anchorcena" blendMode="HARD_LIGHT"
+			depthTest="DISABLE" focusTraversable="true">
+			<children>
+				<HBox alignment="CENTER" blendMode="SCREEN" focusTraversable="true"
+					style="-fx-background-color: transparent;" AnchorPane.bottomAnchor="2.0"
+					AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+					AnchorPane.topAnchor="50.0">
+					<children>
+						<Label fx:id="trace" styleClass="lbverde2" textFill="#f4f8f8"
+							wrapText="true" HBox.hgrow="NEVER" />
+					</children>
+				</HBox>
+				<HBox alignment="CENTER" AnchorPane.leftAnchor="0.0"
+					AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+					<children>
+						<ProgressIndicator fx:id="progressind"
+							maxHeight="30.0" progress="0.0" styleClass="progressind" visible="false">
+							<HBox.margin>
+								<Insets bottom="5.0" top="15.0" />
+							</HBox.margin>
+						</ProgressIndicator>
+					</children>
+				</HBox>
+			</children>
+		</AnchorPane>
+	</children>
+	<effect>
+		<InnerShadow choke="0.13" color="#252424" height="12.47"
+			radius="11.5725" width="35.82" />
+	</effect>
+</VBox>

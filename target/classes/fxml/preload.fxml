@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.AmbientLight?>
+<?import javafx.scene.ParallelCamera?>
+<?import javafx.scene.SubScene?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.MotionBlur?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox fx:id="vbox" cache="true" cacheHint="SCALE_AND_ROTATE" fillWidth="false" maxHeight="300.0" maxWidth="500.0" minHeight="300.0" minWidth="500.0" onMouseDragged="#mousedrag" onMousePressed="#mousepress" prefHeight="300.0" prefWidth="500.0" style="-fx-background-color: transparent;" stylesheets="@../styles/Styles.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.tecsoluction.robo.controller.PreloaderController">
+	<children>
+		<AnchorPane fx:id="anchorr" cache="true" cacheHint="SCALE_AND_ROTATE" maxHeight="300.0" maxWidth="500.0" minHeight="300.0" minWidth="500.0" onMouseDragged="#mousedrag" onMousePressed="#mousepress" prefHeight="300.0" prefWidth="500.0" style="-fx-background-color: transparent;" VBox.vgrow="NEVER">
+			<children>
+            <AnchorPane cache="true" focusTraversable="true" maxHeight="300.0" maxWidth="500.0" minHeight="300.0" minWidth="500.0" prefHeight="300.0" prefWidth="500.0" style="-fx-background-color: #55f2d7;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+						<VBox id="dark-bluee" alignment="CENTER" blendMode="MULTIPLY" cache="true" cacheHint="QUALITY" fillWidth="false" focusTraversable="true" layoutX="5.0" layoutY="4.0" maxHeight="300.0" maxWidth="500.0" minHeight="300.0" minWidth="500.0" prefHeight="300.0" prefWidth="500.0" spacing="15.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+							<padding>
+								<Insets top="25.0" />
+							</padding>
+							<children>
+                        <StackPane fx:id="stackroot" blendMode="LIGHTEN" maxHeight="100.0" maxWidth="100.0" minHeight="100.0" minWidth="100.0" opacity="0.45" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: transparent;" stylesheets="@../styles/Styles.css">
+                           <children>
+                              <AnchorPane fx:id="anchor1" maxHeight="100.0" maxWidth="100.0" minHeight="100.0" minWidth="100.0" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: transparent;" stylesheets="@../styles/Styles.css">
+                                 <children>
+                                    <Pane fx:id="panefd" blendMode="HARD_LIGHT" depthTest="DISABLE" layoutX="26.0" prefHeight="0.0" prefWidth="180.0" style="-fx-background-color: white;" stylesheets="@../styles/Styles.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <ImageView fx:id="imgvfd" cache="true" cacheHint="SCALE_AND_ROTATE" depthTest="ENABLE" fitHeight="100.0" fitWidth="100.0" layoutX="3.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <image>
+                                          <Image fx:id="imgfd" url="@../images/fdd.png" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </AnchorPane>
+                              <ImageView id="dark-bluee" cache="true" cacheHint="SCALE_AND_ROTATE" depthTest="ENABLE" fitHeight="102.0" fitWidth="102.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/qdd.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                           <effect>
+                              <InnerShadow color="#4c4d4d" />
+                           </effect>
+                        </StackPane>
+								<Label fx:id="lblpergunta" styleClass="lbverde" stylesheets="@../styles/Styles.css" text="Carregando Arquivos" textFill="#f2eeee">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin></Label>
+                        <JFXButton fx:id="btcancelar" onAction="#cancelar" style="-fx-border-color: white;" text="Cancelar" textFill="#fff8f8">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin></JFXButton>
+								<HBox alignment="CENTER" fillHeight="false" VBox.vgrow="NEVER">
+									<children>
+										<ProgressIndicator fx:id="progressind" maxHeight="40.0" minHeight="40.0" progress="0.0" styleClass="progressind" visible="false" HBox.hgrow="NEVER" />
+									</children>
+								</HBox>
+								<HBox alignment="CENTER_LEFT" fillHeight="false" focusTraversable="true" maxHeight="22.0" maxWidth="500.0" minHeight="22.0" minWidth="500.0" mouseTransparent="true" prefHeight="22.0" prefWidth="500.0" style="-fx-background-color: transparent;" VBox.vgrow="NEVER">
+									<children>
+										<Label fx:id="trace" alignment="CENTER" maxHeight="21.0" maxWidth="500.0" minHeight="21.0" minWidth="500.0" prefHeight="21.0" prefWidth="500.0" styleClass="lbverde2" text="Iniciando" textFill="WHITE" wrapText="true" HBox.hgrow="NEVER" />
+									</children>
+								</HBox>
+							</children>
+						</VBox>
+                  <HBox cache="true" cacheHint="QUALITY" depthTest="DISABLE" fillHeight="false" focusTraversable="true" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+                     <children>
+                        <AmbientLight color="CHARTREUSE" lightOn="true">
+                           <effect>
+                              <Lighting diffuseConstant="0.51" specularConstant="1.05" specularExponent="14.88" surfaceScale="4.19">
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                        </AmbientLight>
+                        <SubScene fx:id="subcena" blendMode="HARD_LIGHT" depthTest="DISABLE" fill="#70eeffe1" focusTraversable="true" height="20.0" opacity="0.76" pickOnBounds="true" visible="false" width="20.0">
+                           <root>
+                              <Region />
+                           </root>
+                           <effect>
+                              <InnerShadow choke="0.41" color="#f9feff" height="98.28" radius="52.3" width="112.92">
+                                 <input>
+                                    <MotionBlur angle="154.29" radius="27.25" />
+                                 </input>
+                              </InnerShadow>
+                           </effect>
+                        </SubScene>
+                        <ParallelCamera>
+                           <effect>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </effect>
+                        </ParallelCamera>
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+			</children>
+		</AnchorPane>
+	</children>
+   <effect>
+      <InnerShadow color="#f5f0f0" height="12.1" radius="3.3274999999999997" width="3.21" />
+   </effect>
+</VBox>
