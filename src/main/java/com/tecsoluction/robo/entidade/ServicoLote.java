@@ -41,8 +41,11 @@ public class ServicoLote extends Service<Integer> {
 		
 		logincontrol.getLblretornotarefa().setText("Envio Cancelado");
 		logincontrol.getLblretornotarefa().setVisible(true);
+		logincontrol.getJtgbanalisararquivo().setSelected(false);
 		
 	//	logincontrol.SalvarListasErro();
+		
+		logincontrol.FinalizarExecucao();
 		
 		logincontrol.AtualizarQuadro();
 		
@@ -59,9 +62,12 @@ public class ServicoLote extends Service<Integer> {
 	@Override
 	public boolean cancel() {
 		// TODO Auto-generated method stub
+		
+		logincontrol.AtualizarQuadro();
+		
 		return super.cancel();
 		
-//		logincontrol.AtualizarQuadro();
+		
 		
 	}
 	
@@ -171,7 +177,7 @@ public class ServicoLote extends Service<Integer> {
 		
 		logincontrol.getJtgbanalisararquivo().setDisable(false);
 //		logincontrol.getJtgbligar().setDisable(false);
-		logincontrol.getJtgbfiltrosistema().setDisable(false);
+//		logincontrol.getJtgbfiltrosistema().setDisable(false);
 		
 		logincontrol.getJtgbanalisararquivo().setSelected(false);
 
@@ -207,7 +213,7 @@ public class ServicoLote extends Service<Integer> {
 			
 			logincontrol.getJtgbcriartarefa().setSelected(false);
 //			logincontrol.getJtgbligar().setSelected(false);
-			logincontrol.getJtgbfiltrosistema().setSelected(false);
+//			logincontrol.getJtgbfiltrosistema().setSelected(false);
 
 			logincontrol.getToolbar().setDisable(true);
 		//	logincontrol.getJtgbcriartarefa().setDisable(false);

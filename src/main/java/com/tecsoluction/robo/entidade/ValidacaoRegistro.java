@@ -77,6 +77,17 @@ public boolean validaRegistro(Registro detento){
 				
 //				PreencherValidacaoNome(detento, valido);
 				
+				if(detento.getNome().contains("/")){
+					
+					detento.addErros("char especial Nome");
+					valido = false;
+					
+				}else {
+					
+					
+					
+				}
+				
 				
 			}
 			

@@ -1009,6 +1009,38 @@
                                     </JFXToggleButton>
                                  </children>
                               </HBox>
+                              <HBox alignment="CENTER_RIGHT" cacheHint="SPEED" depthTest="DISABLE" disable="true" fillHeight="false" maxHeight="20.0" minHeight="20.0" prefHeight="20.0" stylesheets="@../styles/Styles.css" visible="false">
+                                 <children>
+                                    <Label blendMode="HARD_LIGHT" style="-fx-font-size: 28;" text=" " textFill="#443e46">
+                                       <HBox.margin>
+                                          <Insets left="3.0" />
+                                       </HBox.margin>
+                                    </Label>
+                                    <ProgressIndicator fx:id="progressindfiltro" maxHeight="30.0" prefHeight="30.0" styleClass="progressind" visible="false" HBox.hgrow="NEVER" />
+                                    <Label fx:id="lblfiltrosistema" depthTest="DISABLE" style="-fx-font-size: 28;" styleClass="lbverde" text="Usar Filtro Sistema" textFill="WHITE" wrapText="true">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Label>
+                                    <Pane blendMode="ADD" depthTest="DISABLE" HBox.hgrow="SOMETIMES">
+                                       <children>
+                                          <Label fx:id="lblretornoligar1" alignment="CENTER" blendMode="COLOR_DODGE" contentDisplay="CENTER" depthTest="DISABLE" graphicTextGap="0.0" layoutX="44.0" text="Sucesso" textFill="#62f5f2" textOverrun="CLIP" visible="false" wrapText="true" />
+                                       </children>
+                                    </Pane>
+                                    <JFXToggleButton fx:id="jtgbfiltrosistema" alignment="CENTER_RIGHT" contentDisplay="GRAPHIC_ONLY" depthTest="DISABLE" graphicTextGap="0.0" size="11.0" stylesheets="@../styles/Styles.css" textFill="#f5eded" toggleColor="#4df0e5dd" toggleLineColor="#7df5e9da" unToggleColor="#678899e8" unToggleLineColor="#2e2929ef" wrapText="true">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                       <tooltip>
+                                          <Tooltip autoHide="true" styleClass="lblbranca" text="Localiza o Arquivo Excel">
+                                             <font>
+                                                <Font name="SimSun" size="14.0" />
+                                             </font>
+                                          </Tooltip>
+                                       </tooltip>
+                                    </JFXToggleButton>
+                                 </children>
+                              </HBox>
                               <HBox alignment="CENTER_RIGHT" cacheHint="SPEED" depthTest="DISABLE" fillHeight="false">
                                  <children>
                                     <Label blendMode="HARD_LIGHT" style="-fx-font-size: 28;" text=" " textFill="#443e46">
@@ -1042,38 +1074,6 @@
                                     <JFXToggleButton fx:id="jtgbanalisararquivo" alignment="CENTER_RIGHT" contentDisplay="GRAPHIC_ONLY" depthTest="DISABLE" disable="true" graphicTextGap="0.0" size="11.0" stylesheets="@../styles/Styles.css" textFill="#f5eded" toggleColor="#4df0e5dd" toggleLineColor="#7df5e9da" unToggleColor="#678899" unToggleLineColor="#2e2929ef">
                                        <tooltip>
                                           <Tooltip autoHide="true" styleClass="lblbranca" text="Abre Painel de Validação">
-                                             <font>
-                                                <Font name="SimSun" size="14.0" />
-                                             </font>
-                                          </Tooltip>
-                                       </tooltip>
-                                    </JFXToggleButton>
-                                 </children>
-                              </HBox>
-                              <HBox alignment="CENTER_RIGHT" cacheHint="SPEED" depthTest="DISABLE" fillHeight="false" stylesheets="@../styles/Styles.css">
-                                 <children>
-                                    <Label blendMode="HARD_LIGHT" style="-fx-font-size: 28;" text=" " textFill="#443e46">
-                                       <HBox.margin>
-                                          <Insets left="3.0" />
-                                       </HBox.margin>
-                                    </Label>
-                                    <ProgressIndicator fx:id="progressindfiltro" maxHeight="30.0" prefHeight="30.0" styleClass="progressind" visible="false" HBox.hgrow="NEVER" />
-                                    <Label fx:id="lblfiltrosistema" depthTest="DISABLE" style="-fx-font-size: 28;" styleClass="lbverde" text="Usar Filtro Sistema" textFill="WHITE" wrapText="true">
-                                       <HBox.margin>
-                                          <Insets />
-                                       </HBox.margin>
-                                    </Label>
-                                    <Pane blendMode="ADD" depthTest="DISABLE" HBox.hgrow="SOMETIMES">
-                                       <children>
-                                          <Label fx:id="lblretornoligar1" alignment="CENTER" blendMode="COLOR_DODGE" contentDisplay="CENTER" depthTest="DISABLE" graphicTextGap="0.0" layoutX="44.0" text="Sucesso" textFill="#62f5f2" textOverrun="CLIP" visible="false" wrapText="true" />
-                                       </children>
-                                    </Pane>
-                                    <JFXToggleButton fx:id="jtgbfiltrosistema" alignment="CENTER_RIGHT" contentDisplay="GRAPHIC_ONLY" depthTest="DISABLE" graphicTextGap="0.0" size="11.0" stylesheets="@../styles/Styles.css" textFill="#f5eded" toggleColor="#4df0e5dd" toggleLineColor="#7df5e9da" unToggleColor="#678899e8" unToggleLineColor="#2e2929ef" wrapText="true">
-                                       <HBox.margin>
-                                          <Insets />
-                                       </HBox.margin>
-                                       <tooltip>
-                                          <Tooltip autoHide="true" styleClass="lblbranca" text="Localiza o Arquivo Excel">
                                              <font>
                                                 <Font name="SimSun" size="14.0" />
                                              </font>
@@ -1116,7 +1116,7 @@
                                           </JFXToggleButton>
                                        </children>
                                     </HBox>
-                                    <AnchorPane blendMode="DIFFERENCE" depthTest="DISABLE" disable="true" maxHeight="35.0" maxWidth="250.0" prefHeight="35.0" prefWidth="220.0" VBox.vgrow="NEVER">
+                                    <AnchorPane blendMode="DIFFERENCE" depthTest="DISABLE" disable="true" maxHeight="35.0" maxWidth="250.0" prefHeight="35.0" prefWidth="220.0" visible="false" VBox.vgrow="NEVER">
                                        <VBox.margin>
                                           <Insets left="10.0" top="-10.0" />
                                        </VBox.margin>

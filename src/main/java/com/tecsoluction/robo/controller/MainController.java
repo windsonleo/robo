@@ -3161,7 +3161,7 @@ AtualizarQuadro();
 
 
 
-					servicolote.reset();
+					servicolote.cancel();
 					//stop();
 
 
@@ -3363,6 +3363,7 @@ AtualizarQuadro();
 					progressind.setVisible(true);
 					lblanalisar.setText("Analisando . . .");
 					lblanalisar.setTextFill(Color.TURQUOISE);
+					lblretornotarefa.setVisible(false);
 //
 //					btconverterfilter.fire();
 
@@ -3412,6 +3413,7 @@ AtualizarQuadro();
 					progressind.setVisible(false);
 					lblanalisar.setText("Analisar Arquivo");
 					lblanalisar.setTextFill(Color.WHITE);
+					copyTaskregg.cancel(true);
 
 
 
@@ -11880,9 +11882,10 @@ AtualizarQuadro();
 		jtooltipfiltro.setText("");
 		AtualizarQuadro();
 		AtualizarQuadroRegistros();
-		jtgbligar.setSelected(false);
-		jtgbfiltrosistema.setSelected(false);
+//		jtgbligar.setSelected(false);
+//		jtgbfiltrosistema.setSelected(false);
 		jtgbanalisararquivo.setSelected(false);
+		lblretornotarefa.setVisible(false);
 		
 		CarregarInfo();
 
